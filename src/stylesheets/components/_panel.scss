@@ -16,6 +16,10 @@
     cursor: auto;
   }
 
+  &.-slide-left {
+    transform: translateX(-52vw);
+  }
+
   &::-webkit-scrollbar { // for chrome/safari
     width: 0;
     height: 0;
@@ -35,14 +39,8 @@
 .p-2,
 .p-3,
 .p-4 {
-  &.-moved {
-    transform: translateX(-52vw);
-  }
-
-  &:not(.-open) {
-    &:hover {
-      margin-left: 10px;
-    }
+  &:not(.-open):hover {
+    margin-left: 10px;
   }
 }
 
