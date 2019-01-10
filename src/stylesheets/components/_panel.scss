@@ -1,0 +1,54 @@
+.panel {
+  // border-right: 4px solid #000;
+  background: #fff;
+  box-shadow: 0 0 2em -.5em rgba(#000, 0.5);
+  cursor: pointer;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: calc(8vw + 10px);
+  position: absolute;
+  scroll-behavior: smooth;
+  transition: 0.3s;
+  width: 60vw;
+
+  &.-open {
+    cursor: auto;
+  }
+
+  &::-webkit-scrollbar { // for chrome/safari
+    width: 0;
+    height: 0;
+  }
+}
+
+.panel-title {
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: rotate(-90deg);
+}
+
+.p-0,
+.p-1,
+.p-2,
+.p-3,
+.p-4 {
+  &.-moved {
+    transform: translateX(-52vw);
+  }
+
+  &:not(.-open) {
+    &:hover {
+      margin-left: 10px;
+    }
+  }
+}
+
+@for $i from 0 through 6 {
+  .p-#{$i} {
+    left: #{$i * 8}vw;
+    z-index: -$i;
+  }
+}
