@@ -34,13 +34,13 @@ export default class SlidePanels {
 
   slideOver(newId) {
     for (let i = this.currId; i < newId; i++) {
-      this.panelsMap[i].classList.add('-slide-left')
+      this.panelsMap[i].classList.add('-slide-over')
     }
   }
 
   slideBack(newId) {
     for (let i = (this.currId - 1); i >= newId; i--) {
-      this.panelsMap[i].classList.remove('-slide-left')
+      this.panelsMap[i].classList.remove('-slide-over')
     }
   }
 
