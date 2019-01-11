@@ -1,42 +1,44 @@
-$mobile-length  : 70;
 $desktop-length : 60;
-$mobile-diff    : (100 - $mobile-length) / 5;
 $desktop-diff   : (100 - $desktop-length) / 5;
+$hover-margin   : 10px;
 
 .panel {
   // border-right: 4px solid #000;
   background: #fff;
   box-shadow: 0 0 2em -.5em rgba(#000, 0.5);
   cursor: pointer;
-  height: #{$mobile-length}vh;
-  overflow-x: hidden;
-  overflow-y: auto;
-  padding: calc(8vw + 10px);
-  position: absolute;
+  flex-basis: 0%;
+  flex-grow: 1;
+  overflow: hidden;
+  // padding: 1rem;
   scroll-behavior: smooth;
-  transition: transform 0.3s, margin-left 0.3s;
-  width: 100vw;
+  transition: flex-basis 0.3s;
 
-  @include breakpoint(large-tablet-up) {
-    width: #{$desktop-length}vw;
-    height: 100vh;
+  * { // for mobile - need to take out later
+    pointer-events: none;
   }
 
   &.-open {
     cursor: auto;
+    flex-basis: 100%;
+    overflow-y: auto;
   }
 
-  &.-slide-over {
-    transform: translateY(#{$mobile-diff - $mobile-length}vh);
+  @include breakpoint(large-tablet-up) {
+    height: 100vh;
+    padding: calc(#{$desktop-diff}vw + #{$hover-margin});
+    position: absolute;
+    transition: transform 0.3s, margin-left 0.3s;
+    width: #{$desktop-length}vw;
 
-    @include breakpoint(large-tablet-up) {
+    &.-slide-over {
       transform: translateX(#{$desktop-diff - $desktop-length}vw);
     }
   }
 
   &::-webkit-scrollbar { // for chrome/safari
-    width: 0;
     height: 0;
+    width: 0;
   }
 }
 
@@ -48,24 +50,33 @@ $desktop-diff   : (100 - $desktop-length) / 5;
   transform: rotate(-90deg);
 }
 
+.p-0 {
+  @include breakpoint(small-tablet-down) {
+    flex-basis: 100px;
+
+    &.-open {
+      flex-basis: 0;
+    }
+  }
+}
+
 .p-0,
 .p-1,
 .p-2,
 .p-3,
 .p-4 {
-  &:not(.-open):hover {
-    // margin-left: 10px;
+  @include breakpoint(large-tablet-up) {
+    &:not(.-open):hover {
+      margin-left: $hover-margin;
+    }
   }
 }
 
 @for $i from 0 through 6 {
   .p-#{$i} {
-    top: #{$i * $mobile-diff}vh;
-    z-index: -$i;
-
     @include breakpoint(large-tablet-up) {
       left: #{$i * $desktop-diff}vw;
-      top: 0;
+      z-index: -$i;
     }
   }
 }

@@ -8,15 +8,9 @@ export default class SlidePanels {
   init() {
     this.panels    = [].slice.call(this.el.getElementsByClassName('panel'));
     this.panelsMap = {}
-    this.currId;
+    this.currId    = 0
 
-    this.panels.forEach((panel, i) => {
-      this.panelsMap[i] = panel
-
-      if (panel.classList.contains('-open')) {
-        this.currId = panel.dataset.id
-      }
-    })
+    this.panels.forEach((panel, i) => this.panelsMap[i] = panel)
   }
 
   bindEvents() {
