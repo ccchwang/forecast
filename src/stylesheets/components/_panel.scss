@@ -7,12 +7,11 @@ $hover-margin   : 10px;
   background: #fff;
   box-shadow: 0 0 2em -.5em rgba(#000, 0.5);
   cursor: pointer;
-  flex-basis: 0%;
-  flex-grow: 1;
+  flex: 1 1 0%;
   overflow: hidden;
   // padding: 1rem;
   scroll-behavior: smooth;
-  transition: flex-basis 0.3s;
+  transition: flex 0.3s;
 
   * { // for mobile - need to take out later
     pointer-events: none;
@@ -20,7 +19,7 @@ $hover-margin   : 10px;
 
   &.-open {
     cursor: auto;
-    flex-basis: 100%;
+    flex: 1 1 100%;
     overflow-y: auto;
   }
 
