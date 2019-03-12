@@ -7,5 +7,8 @@
   "license": "MIT",
   "dependencies": {
     "blendid": "^4.4.3"
+  },
+  "scripts": {
+    "start": "yarn run blendid"
   }
 }

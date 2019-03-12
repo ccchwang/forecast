@@ -1,38 +1,32 @@
-$desktop-length : 60;
-$desktop-diff   : (100 - $desktop-length) / 5;
-$hover-margin   : 10px;
+$intro-height   : 10vh;
+$panel-height   : calc(100vh - #{$intro-height});
+$preview-height : calc(#{$panel-height} / 5);
+
+.intro {
+  height: $intro-height;
+
+  &.-active {
+    cursor: pointer;
+  }
+}
+
+.intro,
+.panel {
+  background: #fff;
+  border-top: 3px solid #333;
+  // box-shadow: 0 0 2em -.5em rgba(#000, 0.5);
+}
 
 .panel {
-  // border-right: 4px solid #000;
-  background: #fff;
-  box-shadow: 0 0 2em -.5em rgba(#000, 0.5);
   cursor: pointer;
-  flex: 1 1 0%;
-  overflow: hidden;
-  // padding: 1rem;
-  scroll-behavior: smooth;
-  transition: flex 0.3s;
+  height: $panel-height;
+  padding-top: 15vh;
+  position: absolute;
+  transition: transform 0.3s ease-in;
+  width: 100%;
 
-  * { // for mobile - need to take out later
-    pointer-events: none;
-  }
-
-  &.-open {
-    cursor: auto;
-    flex: 1 1 100%;
-    overflow-y: auto;
-  }
-
-  @include breakpoint(large-tablet-up) {
-    height: 100vh;
-    padding: calc(#{$desktop-diff}vw + #{$hover-margin});
-    position: absolute;
-    transition: transform 0.3s, margin-left 0.3s;
-    width: #{$desktop-length}vw;
-
-    &.-slide-over {
-      transform: translateX(#{$desktop-diff - $desktop-length}vw);
-    }
+  &:hover {
+    transform: translateY(-5px)
   }
 
   &::-webkit-scrollbar { // for chrome/safari
@@ -41,41 +35,11 @@ $hover-margin   : 10px;
   }
 }
 
-.panel-title {
-  pointer-events: none;
-  position: absolute;
-  right: 0;
-  top: 0;
-  transform: rotate(-90deg);
-}
-
-.p-0 {
-  @include breakpoint(small-tablet-down) {
-    flex-basis: 100px;
-
-    &.-open {
-      flex-basis: 0;
-    }
-  }
-}
-
-.p-0,
-.p-1,
-.p-2,
-.p-3,
-.p-4 {
-  @include breakpoint(large-tablet-up) {
-    &:not(.-open):hover {
-      margin-left: $hover-margin;
-    }
-  }
-}
-
-@for $i from 0 through 6 {
-  .p-#{$i} {
-    @include breakpoint(large-tablet-up) {
-      left: #{$i * $desktop-diff}vw;
-      z-index: -$i;
-    }
+@for $i from 0 through 4 {
+  .panel-#{$i} {
+    --slide-up   : calc((#{$preview-height} * #{-$i}));
+    --slide-down : calc((#{$preview-height} * (5 - #{$i})));
+    top          : calc((#{$preview-height} * #{$i}) + #{$intro-height});
+    z-index      : $i;
   }
 }

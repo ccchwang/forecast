@@ -6,41 +6,50 @@ export default class SlidePanels {
   }
 
   init() {
-    this.panels    = [].slice.call(this.el.getElementsByClassName('panel'));
-    this.panelsMap = {}
-    this.currId    = 0
+    this.intro  = this.el.getElementsByClassName('intro')[0]
+    this.panels = [].slice.call(this.el.getElementsByClassName('panel'))
+    this.map    = {}
+    this.currId
 
-    this.panels.forEach((panel, i) => this.panelsMap[i] = panel)
+    this.panels.forEach((panel, i) => this.map[i] = panel)
   }
 
   bindEvents() {
     this.panels.forEach(panel => panel.addEventListener('click', this.onClick))
+    this.intro.addEventListener('click', this.reset)
   }
 
   onClick = (e) => {
     let newId = parseInt(e.target.dataset.id)
 
-    if (newId !== this.currId) {
-      newId > this.currId ? this.slideOver(newId) : this.slideBack(newId)
-      this.setNewPanel(newId)
+    if (this.exists(newId) && newId !== this.currId) {
+      this.movePanels(newId)
+      this.currId = newId
+      this.intro.classList.add('-active')
     }
   }
 
-  slideOver(newId) {
-    for (let i = this.currId; i < newId; i++) {
-      this.panelsMap[i].classList.add('-slide-over')
+  movePanels(newId) {
+    for (var i in this.map) {
+      let direction = i <= newId ? '--slide-up' : '--slide-down'
+      this.map[i].style.setProperty('transform', `translateY(var(${direction}))`)
     }
   }
 
-  slideBack(newId) {
-    for (let i = (this.currId - 1); i >= newId; i--) {
-      this.panelsMap[i].classList.remove('-slide-over')
+  reset = () => {
+    if (this.exists(this.currId)) {
+      this.map[this.currId].scrollTo({top: 0})
+
+      for (var i in this.map) {
+        this.map[i].style.removeProperty('transform')
+      }
+
+      this.currId = -1
+      this.intro.classList.remove('-active')
     }
   }
 
-  setNewPanel(newId) {
-    this.panelsMap[newId].classList.add('-open')
-    this.panelsMap[this.currId].classList.remove('-open')
-    this.currId = newId
+  exists(id) {
+    return id >= 0
   }
 }
