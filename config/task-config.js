@@ -20,7 +20,8 @@ module.exports = {
       // should match `dest` in
       // path-config.json
       baseDir: 'docs'
-    }
+    },
+    open: false
   },
 
   production: {

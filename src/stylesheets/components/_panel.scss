@@ -22,11 +22,16 @@ $preview-height : calc(#{$panel-height} / 5);
   height: $panel-height;
   padding-top: 15vh;
   position: absolute;
-  transition: transform 0.3s ease-in;
+  transition: transform 0.25s ease-in;
   width: 100%;
 
   &:hover {
     transform: translateY(-5px)
+  }
+
+  &.-active {
+    cursor: auto;
+    overflow-y: scroll;
   }
 
   &::-webkit-scrollbar { // for chrome/safari

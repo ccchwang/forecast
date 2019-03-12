@@ -24,8 +24,10 @@ export default class SlidePanels {
 
     if (this.exists(newId) && newId !== this.currId) {
       this.movePanels(newId)
-      this.currId = newId
+
+      this.map[newId].classList.add('-active')
       this.intro.classList.add('-active')
+      this.currId = newId
     }
   }
 
@@ -44,8 +46,9 @@ export default class SlidePanels {
         this.map[i].style.removeProperty('transform')
       }
 
-      this.currId = -1
+      this.map[this.currId].classList.remove('-active')
       this.intro.classList.remove('-active')
+      this.currId = -1
     }
   }
 
