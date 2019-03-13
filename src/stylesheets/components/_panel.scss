@@ -3,6 +3,7 @@ $panel-height   : calc(100vh - #{$intro-height});
 $preview-height : calc(#{$panel-height} / 5);
 
 .intro {
+  background: linear-gradient(to right, #345cc3, lightgreen, lemonchiffon, #f3d3c1);
   height: $intro-height;
 
   &.-active {
@@ -12,27 +13,42 @@ $preview-height : calc(#{$panel-height} / 5);
 
 .intro,
 .panel {
-  background: #fff;
   border-top: 3px solid #333;
-  // box-shadow: 0 0 2em -.5em rgba(#000, 0.5);
 }
 
 .panel {
+  background: #fff;
   cursor: pointer;
   height: $panel-height;
   padding-top: 15vh;
   position: absolute;
-  transition: transform 0.25s ease-in;
+  transition: transform 0.25s;
   width: 100%;
 
   &:hover {
-    transform: translateY(-5px)
+    transform: translateY(-10px)
   }
 
   &.-active {
     cursor: auto;
     overflow-y: scroll;
   }
+
+  //**** BOX-SHADOW TEST
+  // &::before {
+  //   content: '';
+  //   box-shadow: 0 0 2em -0.5em rgba(0, 0, 0, 0.5);
+  //   display: block;
+  //   width: 100%;
+  //   height: 50px;
+  //   top: calc(-25vh + 50px);
+  //   position: relative;
+  //   transition: 0.25s;
+  // }
+
+  // &.try::before {
+  //   opacity: 0;
+  // }
 
   &::-webkit-scrollbar { // for chrome/safari
     height: 0;

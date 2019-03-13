@@ -1,146 +1,80 @@
-.flex {
-  display: flex;
-  flex-wrap: wrap;
-}
+.grid {
+  background: #333;
+  border: 3px solid #333;
+  border-width: 3px 0;
+  display: grid;
+  grid-gap: 3px;
+  grid-template: repeat(50, 50px) / repeat(10, 1fr);
 
-.box1,.box2,.box3,.box4 {
-  border: 8px solid white;
-  border-top-width: 0;
-}
-
-.box1, .box3 {
-  border-right-width: 0;
-}
-
-.box1 {
-  flex-basis: 60%;
-  height: 300px;
-  // margin-right: 2%;
-}
-
-.box2 {
-  background: #0038ed;
-  height: 300px;
-  flex-basis: 40%;
-}
-
-.box3 {
-  background: #408be8;
-  flex-basis: 40%;
-  height: 300px;
-  // margin-right: 2%;
-  // margin-top: 2%;
-}
-
-.box4 {
-
-  height: 300px;
-  flex-basis: 60%;
-  // margin-top: 2%;
-}
-
-.pogo {
-  width: 100%;
-  height: 100%;
-  background: url('/images/pogo.png') #2b59c3;
-  /* background-repeat: repeat-x; */
-  background-size: 20%;
-  /* background-attachment: fixed; */
-  background-repeat: round;
-  background-blend-mode: hard-light;
-  position: relative;
-
-  &::after {
+  div:nth-child(1) {
     background: url('/images/pogo.png') #2b59c3;
-    position: absolute;
-    content: '';
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    background-blend-mode: hard-light;
-    // opacity: 0;
-    transform: scale(0.25);
-    transition:  transform 0.25s;
+    grid-row: 1 / span 6;
+    grid-column: 1 / span 6;
   }
 
-  &:hover {
-    &::after {
-      transition: 0.25s;
-      opacity: 1;
-      transform: scale(1);
-    }
+  div:nth-child(2) {
+    background: #345cc3;
+    grid-row: 1 / span 6;
+    grid-column: 7 / span 4;
   }
-}
 
-.whha {
-  width: 100%;
-  height: 100%;
-  background: url('/images/whha.png') #5786C0;
-  /* background-repeat: repeat-x; */
-  background-size: 20%;
-  /* background-attachment: fixed; */
-  background-repeat: round;
-  background-blend-mode: hard-light;
-  position: relative;
+  div:nth-child(3) {
+    background: #6086c0;
+    grid-row: 7 / span 6;
+    grid-column: 1 / span 4;
+  }
 
-  &::after {
+  div:nth-child(4) {
     background: url('/images/whha.png') #5786C0;
-    position: absolute;
-    content: '';
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    background-blend-mode: hard-light;
-    // opacity: 0;
-    transform: scale(0.25);
-    transition:  transform 0.25s;
+    grid-row: 7 / span 6;
+    grid-column: 5 / span 5;
   }
 
-  &:hover {
-    &::after {
-      transition: 0.25s;
-      opacity: 1;
-      transform: scale(1);
-    }
+  div:nth-child(5) {
+    background: #6086c0;
+    grid-row: 7 / span 6;
+    grid-column: 10;
   }
-}
 
-
-.shop {
-  width: 100%;
-  height: 100%;
-  background: url('/images/shop.png') #f3d3c1;
-  /* background-repeat: repeat-x; */
-  background-size: 20%;
-  /* background-attachment: fixed; */
-  background-repeat: round;
-  // background-blend-mode: lighten;
-  position: relative;
-
-  &::after {
+  div:nth-child(6) {
     background: url('/images/shop.png') #f3d3c1;
-    position: absolute;
-    content: '';
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    // background-blend-mode: lighten;
-    // opacity: 0;
-    transform: scale(0.25);
-    transition:  transform 0.25s;
+    grid-row: 13 / span 6;
+    grid-column: 1 / span 6;
   }
 
-  &:hover {
-    &::after {
-      transition: 0.25s;
-      opacity: 1;
-      transform: scale(1);
-    }
+  div:nth-child(7) {
+    background: #ffc29f;
+    grid-column: 7 / span 4;
+    grid-row: 13;
   }
-}
-.box7 {
-  background: #f3d3c1
+
+  div:nth-child(8) {
+    background: #f3d3c1;
+    grid-column: 7 / span 4;
+    grid-row: 14 / span 5;
+  }
+
+  div:nth-child(9) {
+    background: lightgray;
+    grid-column: 1 / span 4;
+    grid-row: 19 / span 3;
+  }
+
+  div:nth-child(10) {
+    background: lightgray;
+    grid-column: 1 / span 4;
+    grid-row: 22 / span 3;
+  }
+
+  div:nth-child(11) {
+    background: lightgray;
+    grid-column: 5 / span 6;
+    grid-row: 19 / span 6;
+  }
+
+  div {
+    background-blend-mode: lighten !important;
+    background-repeat: round !important;
+    background-size: 15% !important;
+  }
 }
