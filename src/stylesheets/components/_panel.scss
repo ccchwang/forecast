@@ -2,7 +2,7 @@ $intro-height   : 50px;
 $panel-height   : calc(100vh - #{$intro-height});
 $preview-height : calc(#{$panel-height} / 5);
 $hover-space    : 10px;
-$box-shadow     : 0 0 20px 0 rgba(0, 0, 0, 0.4);
+$box-shadow     : 0 0 15px 0 rgba(0, 0, 0, 0.4);
 
 .intro {
   height: $intro-height;
@@ -74,7 +74,7 @@ $box-shadow     : 0 0 20px 0 rgba(0, 0, 0, 0.4);
 
 .panel-1 {
   background: url(/images/banner-bg.jpg) #afc084;
-  background-size: 40%;
+  background-size: 30%;
   background-blend-mode: color-burn;
 }
 
@@ -83,8 +83,10 @@ $box-shadow     : 0 0 20px 0 rgba(0, 0, 0, 0.4);
 }
 
 .panel-3 {
-  background: #ffbe88;
-  background: #aa8dc2;
+  background: url(/images/banner-bg.jpg) #ffbe88;
+  background-size: 40%;
+  background-blend-mode: color-burn;
+  // background: #ffbe88;
 }
 
 .panel-4 {

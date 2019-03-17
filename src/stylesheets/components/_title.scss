@@ -5,6 +5,13 @@
   padding-top: calc((#{$preview-height} - 85px) / 2);
   text-align: center;
   transition: font-variation-settings 0.25s;
+
+  &::before {
+    content: '';
+    left: 0;
+    position: absolute;
+    z-index: -1;
+  }
 }
 
 .title-work {
@@ -18,26 +25,33 @@
 }
 
 .title-lab {
-  background: #7b9750;
   color: #9bff8d;
-  font-size: 85px;
-  font-variation-settings: "BLDA" 475, "BLDB" 0, "SKLB" 0;
-  padding-top: calc((#{$preview-height} - 95px) / 2);
-  text-shadow: 0.06em 0.06em 0px #e9909d;
+  font-size: 90px;
+  font-variation-settings: "BLDA" 675, "BLDB" 0, "SKLB" 0;
+  padding-top: calc((#{$preview-height} - 100px) / 2);
+  position: relative;
+  text-shadow: 0.06em 0.06em 0px #f58b9d;
 
   &:hover {
-    font-variation-settings: "BLDA" 475, "BLDB" 750, "SKLB" 1000;
+    font-variation-settings: "BLDA" 675, "BLDB" 750, "SKLB" 1000;
+  }
+
+  &::before {
+    background: #7b9750;
+    height: 0.75em;
+    top: 0.5em;
+    width: 100%;
   }
 
   .a-span {
-    margin-left: 0.07em;
+    margin-left: 0.0725em;
     margin-right: 0.01em;
   }
 }
 
 .title-musings {
   color: #ffd700;
-  font-variation-settings: "TRMC" 1000, "WMX2" 400, "SKLD" 0, "TRMA" 1000;
+  font-variation-settings: "TRMC" 1000, "WMX2" 425, "SKLD" 0, "TRMA" 1000;
   text-shadow: 0.065em 0.07em 0px #e4ae31;
   transition-property: color, font-variation-settings, text-shadow;
 
@@ -54,27 +68,38 @@
 }
 
 .title-about {
-  // background: #aa8dc2;
-  color: #ffbe88;
+  color: #9348bc;
   font-size: 80px;
   font-variation-settings: "SKLA" 0, "TRMK" 800;
   padding-top: calc((#{$preview-height} - 90px) / 2);
-  text-shadow: 0.05em 0.05em 0px #6d00c4;
+  position: relative;
+  text-shadow: 0.05em 0.05em 0px #ffbe88;
   transition-property: font-variation-settings, text-shadow, transform;
 
   &:hover {
     font-variation-settings: "SKLA" 800, "TRMK" 0;
-    text-shadow: 0.09em 0.08em 0px #6d00c4;
+    text-shadow: 0.09em 0.08em 0px #ffbe88;
     transform: translateX(-5px)
+  }
+
+  &::before {
+    background: #c0abd2;
+    height: 1.5em;
+    top: 0.6em;
+    width: 110%;
   }
 }
 
 .title-contact {
   color: #ffcc9e;
-  font-variation-settings: "TRMF" 0, "TRMC" 0;
-  text-shadow: -0.09em 0.085em 0px #333;
+  font-variation-settings: "TRMF" 0, "TRMA" 1000, "TRMC" 1000;
+  text-shadow: -0.08em 0.075em 0px #333;
 
   &:hover {
-    font-variation-settings: "TRMF" 1000, "TRMC" 1000;
+    font-variation-settings: "TRMF" 1000, "TRMA" 1000, "TRMC" 1000;
+  }
+
+  .t-span {
+    margin-left: 0.06em;
   }
 }
