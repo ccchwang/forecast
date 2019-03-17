@@ -1,0 +1,16 @@
+// Imports
+@mixin font-face($name, $filename, $style: normal, $weight: normal) {
+  @font-face {
+    font-family: #{$name};
+    font-style: $style;
+    font-weight: $weight;
+    src: url("../fonts/#{$filename}.ttf") format("truetype");
+  }
+}
+
+@include font-face('Decovar', 'DecovarAlpha-VF');
+
+// Mixins
+@mixin Decovar {
+  font-family: 'Decovar', 'Helvetica', 'Arial', sans-serif;
+}

@@ -1,0 +1,80 @@
+.title {
+  @include Decovar;
+  font-size: 75px;
+  min-height: calc(#{$preview-height} + #{$hover-space});
+  padding-top: calc((#{$preview-height} - 85px) / 2);
+  text-align: center;
+  transition: font-variation-settings 0.25s;
+}
+
+.title-work {
+  color: #cbb4e4;
+  font-variation-settings: "WMX2" 1000, "SKLA" 0, "SKLD" 0;
+  text-shadow: 0.06em 0.06em 0px #77479e;
+
+  &:hover {
+    font-variation-settings: "WMX2" 1000, "SKLA" 500, "SKLD" 238;
+  }
+}
+
+.title-lab {
+  background: #7b9750;
+  color: #9bff8d;
+  font-size: 85px;
+  font-variation-settings: "BLDA" 475, "BLDB" 0, "SKLB" 0;
+  padding-top: calc((#{$preview-height} - 95px) / 2);
+  text-shadow: 0.06em 0.06em 0px #e9909d;
+
+  &:hover {
+    font-variation-settings: "BLDA" 475, "BLDB" 750, "SKLB" 1000;
+  }
+
+  .a-span {
+    margin-left: 0.07em;
+    margin-right: 0.01em;
+  }
+}
+
+.title-musings {
+  color: #ffd700;
+  font-variation-settings: "TRMC" 1000, "WMX2" 400, "SKLD" 0, "TRMA" 1000;
+  text-shadow: 0.065em 0.07em 0px #e4ae31;
+  transition-property: color, font-variation-settings, text-shadow;
+
+  &:hover {
+    color: #ffc235;
+    font-variation-settings: "TRMC" 1000, "WMX2" 0, "SKLD" 350, "TRMA" 1000, "BLDA" 400;
+    text-shadow: none;
+  }
+
+  .s-span {
+    margin-left: 0.03em;
+    margin-right: 0.03em;
+  }
+}
+
+.title-about {
+  // background: #aa8dc2;
+  color: #ffbe88;
+  font-size: 80px;
+  font-variation-settings: "SKLA" 0, "TRMK" 800;
+  padding-top: calc((#{$preview-height} - 90px) / 2);
+  text-shadow: 0.05em 0.05em 0px #6d00c4;
+  transition-property: font-variation-settings, text-shadow, transform;
+
+  &:hover {
+    font-variation-settings: "SKLA" 800, "TRMK" 0;
+    text-shadow: 0.09em 0.08em 0px #6d00c4;
+    transform: translateX(-5px)
+  }
+}
+
+.title-contact {
+  color: #ffcc9e;
+  font-variation-settings: "TRMF" 0, "TRMC" 0;
+  text-shadow: -0.09em 0.085em 0px #333;
+
+  &:hover {
+    font-variation-settings: "TRMF" 1000, "TRMC" 1000;
+  }
+}

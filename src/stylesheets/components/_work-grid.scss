@@ -1,7 +1,7 @@
 .grid {
-  background: #333;
-  border: 3px solid #333;
-  border-width: 3px 0;
+  background: #fff;
+  border: 5px solid #fff;
+  border-width: 5px 0;
   display: grid;
   grid-gap: 3px;
   grid-template: repeat(50, 50px) / repeat(10, 1fr);
@@ -74,7 +74,7 @@
 
   div {
     background-blend-mode: lighten !important;
-    background-repeat: round !important;
-    background-size: 15% !important;
+    background-size: cover !important;
+    background-position: center top !important;
   }
 }

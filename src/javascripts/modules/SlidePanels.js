@@ -6,7 +6,7 @@ export default class SlidePanels {
   }
 
   init() {
-    this.intro  = this.el.getElementsByClassName('intro')[0]
+    this.intro  = this.el.querySelector('.intro')
     this.panels = [].slice.call(this.el.getElementsByClassName('panel'))
     this.map    = {}
     this.currId

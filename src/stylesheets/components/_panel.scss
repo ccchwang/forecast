@@ -1,9 +1,10 @@
-$intro-height   : 10vh;
+$intro-height   : 50px;
 $panel-height   : calc(100vh - #{$intro-height});
 $preview-height : calc(#{$panel-height} / 5);
+$hover-space    : 10px;
+$box-shadow     : 0 0 20px 0 rgba(0, 0, 0, 0.4);
 
 .intro {
-  background: linear-gradient(to right, #345cc3, lightgreen, lemonchiffon, #f3d3c1);
   height: $intro-height;
 
   &.-active {
@@ -11,22 +12,19 @@ $preview-height : calc(#{$panel-height} / 5);
   }
 }
 
-.intro,
 .panel {
-  border-top: 3px solid #333;
-}
-
-.panel {
+  // box-shadow: 0 0 2em -.5em rgba(0, 0, 0, 0.4);
+  // box-shadow: 0 0 10px 0 rgba(0,0,0,.32);
+  box-shadow: $box-shadow;
   background: #fff;
   cursor: pointer;
   height: $panel-height;
-  padding-top: 15vh;
   position: absolute;
   transition: transform 0.25s;
   width: 100%;
 
   &:hover {
-    transform: translateY(-10px)
+    transform: translateY(-$hover-space);
   }
 
   &.-active {
@@ -63,4 +61,32 @@ $preview-height : calc(#{$panel-height} / 5);
     top          : calc((#{$preview-height} * #{$i}) + #{$intro-height});
     z-index      : $i;
   }
+}
+
+.panel-0 {
+  background: #C3FF68;
+  box-shadow: none;
+
+  &:hover {
+    box-shadow: $box-shadow;
+  }
+}
+
+.panel-1 {
+  background: url(/images/banner-bg.jpg) #afc084;
+  background-size: 40%;
+  background-blend-mode: color-burn;
+}
+
+.panel-2 {
+  background: #FFFBB7;
+}
+
+.panel-3 {
+  background: #ffbe88;
+  background: #aa8dc2;
+}
+
+.panel-4 {
+  background: #e7919e;
 }
