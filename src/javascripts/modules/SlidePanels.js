@@ -33,8 +33,9 @@ export default class SlidePanels {
 
   movePanels(newId) {
     for (var i in this.map) {
-      let direction = i <= newId ? '--slide-up' : '--slide-down'
-      this.map[i].style.setProperty('transform', `translateY(var(${direction}))`)
+      let direction = i <= newId ? '-slide-up' : '-slide-down'
+      this.map[i].classList.add(direction)
+      this.map[i].class = direction
     }
   }
 
@@ -43,7 +44,7 @@ export default class SlidePanels {
       this.map[this.currId].scrollTo({top: 0})
 
       for (var i in this.map) {
-        this.map[i].style.removeProperty('transform')
+        this.map[i].classList.remove(this.map[i].class)
       }
 
       this.map[this.currId].classList.remove('-active')
