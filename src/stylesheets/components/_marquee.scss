@@ -1,0 +1,22 @@
+@keyframes marquee {
+  to {
+    transform: translateX(-100%)
+  }
+}
+
+.marquee-container {
+  align-items: center;
+  border-bottom: 1px solid #000;
+  display: flex;
+  height: $header-height;
+  width: 5000px;
+}
+
+.marquee {
+  animation: marquee 35s linear infinite none;
+}
+
+.marquee__text,
+.nav__item {
+  margin: 0 1em;
+}

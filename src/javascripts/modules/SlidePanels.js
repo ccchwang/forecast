@@ -6,7 +6,7 @@ export default class SlidePanels {
   }
 
   init() {
-    this.intro  = this.el.querySelector('.intro')
+    this.hero   = this.el.querySelector('.hero')
     this.panels = [].slice.call(this.el.getElementsByClassName('panel'))
     this.map    = {}
     this.currId
@@ -16,7 +16,7 @@ export default class SlidePanels {
 
   bindEvents() {
     this.panels.forEach(panel => panel.addEventListener('click', this.onClick))
-    this.intro.addEventListener('click', this.reset)
+    this.hero.addEventListener('click', this.reset)
   }
 
   onClick = (e) => {
@@ -26,7 +26,7 @@ export default class SlidePanels {
       this.movePanels(newId)
 
       this.map[newId].classList.add('-active')
-      this.intro.classList.add('-active')
+      this.hero.classList.add('-active')
       this.currId = newId
     }
   }
@@ -48,7 +48,7 @@ export default class SlidePanels {
       }
 
       this.map[this.currId].classList.remove('-active')
-      this.intro.classList.remove('-active')
+      this.hero.classList.remove('-active')
       this.currId = -1
     }
   }

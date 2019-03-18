@@ -1,0 +1,17 @@
+.hero {
+  font-size: 18px;
+  font-weight: 300;
+  transition: $transition-dur ($transition-dur + 0.05s) ease-in;
+
+  &.-active {
+    transform: translateY(-50%);
+  }
+}
+
+.nav {
+  align-items: center;
+  display: flex;
+  height: $header-height;
+  justify-content: space-between;
+  overflow-y: hidden;
+}

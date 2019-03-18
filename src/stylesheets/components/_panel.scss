@@ -1,21 +1,10 @@
-$intro-height   : 50px;
-$panel-height   : calc(100vh - #{$intro-height});
+$panel-height   : calc(100vh - #{$header-height});
 $preview-height : calc(#{$panel-height} / 5);
 $hover-space    : 10px;
 $box-shadow     : 0 0 15px 0 rgba(0, 0, 0, 0.4);
 $transition-dur : 0.3s;
 
-.intro {
-  height: $intro-height;
-
-  &.-active {
-    cursor: pointer;
-  }
-}
-
 .panel {
-  // box-shadow: 0 0 2em -.5em rgba(0, 0, 0, 0.4);
-  // box-shadow: 0 0 10px 0 rgba(0,0,0,.32);
   background: #fff;
   cursor: pointer;
   height: $panel-height;
@@ -67,13 +56,14 @@ $transition-dur : 0.3s;
   .panel-#{$i} {
     --slide-up   : calc((#{$preview-height} * #{-$i}));
     --slide-down : calc((#{$preview-height} * (5 - #{$i})));
-    top          : calc((#{$preview-height} * #{$i}) + #{$intro-height});
+    top          : calc((#{$preview-height} * #{$i}) + #{$header-height});
     z-index      : $i;
   }
 }
 
 .panel-0 {
-  background: #C3FF68;
+  background: #c3f776;
+  // background: #D0FF71;
 
   &::before {
     opacity: 0;
@@ -91,7 +81,7 @@ $transition-dur : 0.3s;
 }
 
 .panel-2 {
-  background: #FFFBB7;
+  background: #f8f4a3;
 }
 
 .panel-3 {
@@ -102,5 +92,5 @@ $transition-dur : 0.3s;
 }
 
 .panel-4 {
-  background: #e7919e;
+  background: #6f5f79;
 }
