@@ -1,47 +1,47 @@
 {% extends 'layouts/application.html' %}
 
 {% block content %}
-<main data-module="SlidePanels">
-  <header class="header">
-    <div class="hero">
-      <div class="marquee-container">
-        <h2 class="marquee">
-          <span class="marquee__text">Cho Hwang</span>
-          <span class="marquee__text">Frontend Developer</span>
-          <span class="marquee__text">Cho Hwang</span>
-          <span class="marquee__text">Frontend Developer</span>
-          <span class="marquee__text">Cho Hwang</span>
-          <span class="marquee__text">Frontend Developer</span>
-          <span class="marquee__text">Cho Hwang</span>
-          <span class="marquee__text">Frontend Developer</span>
-        </h2>
-        <h2 class="marquee">
-          <span class="marquee__text">Cho Hwang</span>
-          <span class="marquee__text">Frontend Developer</span>
-          <span class="marquee__text">Cho Hwang</span>
-          <span class="marquee__text">Frontend Developer</span>
-          <span class="marquee__text">Cho Hwang</span>
-          <span class="marquee__text">Frontend Developer</span>
-          <span class="marquee__text">Cho Hwang</span>
-          <span class="marquee__text">Frontend Developer</span>
-        </h2>
-      </div>
-
-      <nav>
-        <ul class="nav">
-          <li class="nav__item">back</li>
-          <li class="nav__item">Work</li>
-          <li class="nav__item">Lab</li>
-          <li class="nav__item">Musings</li>
-          <li class="nav__item">About</li>
-          <li class="nav__item">Contact</li>
-        </ul>
-      </nav>
+<header class="header">
+  <div class="hero" id="hero">
+    <div class="marquee-container">
+      <h2 class="marquee">
+        <span class="marquee__text">Cho Hwang</span>
+        <span class="marquee__text">Frontend Developer</span>
+        <span class="marquee__text">Cho Hwang</span>
+        <span class="marquee__text">Frontend Developer</span>
+        <span class="marquee__text">Cho Hwang</span>
+        <span class="marquee__text">Frontend Developer</span>
+        <span class="marquee__text">Cho Hwang</span>
+        <span class="marquee__text">Frontend Developer</span>
+      </h2>
+      <h2 class="marquee">
+        <span class="marquee__text">Cho Hwang</span>
+        <span class="marquee__text">Frontend Developer</span>
+        <span class="marquee__text">Cho Hwang</span>
+        <span class="marquee__text">Frontend Developer</span>
+        <span class="marquee__text">Cho Hwang</span>
+        <span class="marquee__text">Frontend Developer</span>
+        <span class="marquee__text">Cho Hwang</span>
+        <span class="marquee__text">Frontend Developer</span>
+      </h2>
     </div>
-  </header>
 
+    <nav>
+      <ul class="nav">
+        <li class="nav__item" id="back-link">back</li>
+        <li class="nav__item nav__link">Work</li>
+        <li class="nav__item nav__link">Lab</li>
+        <li class="nav__item nav__link">Musings</li>
+        <li class="nav__item nav__link">About</li>
+        <li class="nav__item nav__link">Contact</li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="main" data-module="SlidePanels">
   <section class="panel panel-0">
-    <h2 class="title title-work" data-id="0">Work</h2>
+    <h2 class="title">Work</h2>
     <div class="grid">
       <div></div>
       <div></div>
@@ -59,9 +59,7 @@
   </section>
 
   <section class="panel panel-1">
-    <h2 class="title title-lab" data-id="1">
-      L<span class="a-span">a</span>b
-    </h2>
+    <h2 class="title">Lab</h2>
     <div class="grid">
       <div></div>
       <div></div>
@@ -79,16 +77,13 @@
   </section>
 
   <section class="panel panel-2">
-    <h2 class="title title-musings" data-id="2">
-      Mu<span class="s-span">s</span>ing<span class="s-span">s</span>
-    </h2>
+    <h2 class="title">Musings</h2>
     <img src="https://bybio.files.wordpress.com/2013/06/new-elm-leaves.jpg">
     <p>ontrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, ontrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, </p>
-    </div>
   </section>
 
   <section class="panel panel-3">
-    <h2 class="title title-about" data-id="3">About</h2>
+    <h2 class="title">About</h2>
     <div>
       <img src="https://bybio.files.wordpress.com/2013/06/new-elm-leaves.jpg">
       <p>ontrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, ontrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, </p>
@@ -96,9 +91,7 @@
   </section>
 
   <footer class="panel panel-4">
-    <h2 class="title title-contact" data-id="4">
-      Con<span class="t-span">t</span>ac<span class="t-span">t</span>
-    </h2>
+    <h2 class="title">Contact</h2>
     <div>
       <img src="https://bybio.files.wordpress.com/2013/06/new-elm-leaves.jpg">
       <p>ontrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, ontrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, </p>

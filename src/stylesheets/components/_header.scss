@@ -1,6 +1,10 @@
-$header-height: 45px;
-
 .header {
+  background: #fff;
   border-bottom: 1px solid #000;
   height: $header-height;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
 }

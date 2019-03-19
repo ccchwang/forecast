@@ -6,51 +6,70 @@ export default class SlidePanels {
   }
 
   init() {
-    this.hero   = this.el.querySelector('.hero')
+    this.hero   = document.getElementById('hero')
     this.panels = [].slice.call(this.el.getElementsByClassName('panel'))
     this.map    = {}
     this.currId
+    this.activeClass = '-active'
 
-    this.panels.forEach((panel, i) => this.map[i] = panel)
+    this.backLink = document.getElementById('back-link')
+    this.navLinks = [].slice.call(document.getElementsByClassName('nav__link'))
   }
 
   bindEvents() {
-    this.panels.forEach(panel => panel.addEventListener('click', this.onClick))
-    this.hero.addEventListener('click', this.reset)
+    this.backLink.addEventListener('click', this.reset)
+    this.navLinks.forEach((link, i) => link.addEventListener('click', () => this.changeSection(i)))
+
+    this.panels.forEach((panel, i) => {
+      this.map[i] = panel
+      panel.addEventListener('click', () => this.onClick(i))
+    })
   }
 
-  onClick = (e) => {
-    let newId = parseInt(e.target.dataset.id)
-
+  onClick(newId) {
     if (this.exists(newId) && newId !== this.currId) {
       this.movePanels(newId)
 
-      this.map[newId].classList.add('-active')
-      this.hero.classList.add('-active')
+      this.map[newId].classList.add(this.activeClass)
+      this.hero.classList.add(this.activeClass)
       this.currId = newId
     }
   }
 
   movePanels(newId) {
     for (var i in this.map) {
-      let direction = i <= newId ? '-slide-up' : '-slide-down'
-      this.map[i].classList.add(direction)
-      this.map[i].class = direction
+      let direction = parseInt(i) === newId ? 'active' : (i < newId ? 'up' : 'down')
+
+      this.map[i].style.setProperty('animation', `var(--slide-${direction})`)
     }
   }
 
   reset = () => {
     if (this.exists(this.currId)) {
-      this.map[this.currId].scrollTo({top: 0})
-
       for (var i in this.map) {
-        this.map[i].classList.remove(this.map[i].class)
+        this.map[i].style.removeProperty('animation')
       }
 
-      this.map[this.currId].classList.remove('-active')
-      this.hero.classList.remove('-active')
+      this.map[this.currId].classList.remove(this.activeClass)
+      this.hero.classList.remove(this.activeClass)
       this.currId = -1
     }
+  }
+
+  changeSection(newId) {
+    if (this.currId > newId) {
+      for (let i = this.currId; i > newId; i--) {
+        this.map[i].style.setProperty('animation', 'var(--slide-down)')
+      }
+    }
+
+    // remove active class off current
+    this.map[this.currId].classList.remove(this.activeClass)
+
+    // set new active
+    this.map[newId].style.setProperty('animation', 'var(--slide-active)')
+    this.map[newId].classList.add(this.activeClass)
+    this.currId = newId
   }
 
   exists(id) {

@@ -1,8 +1,11 @@
 body {
-  overflow: hidden;
+  background: #b2b2b2;
 }
 
 img {
   width: 100%;
 }
 
+.main {
+  perspective: 100px;
+}

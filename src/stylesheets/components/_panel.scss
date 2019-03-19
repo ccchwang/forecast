@@ -1,49 +1,53 @@
-$panel-height   : calc(100vh - #{$header-height});
-$preview-height : calc(#{$panel-height} / 5);
-$hover-space    : 10px;
-$box-shadow     : 0 0 15px 0 rgba(0, 0, 0, 0.4);
-$transition-dur : 0.3s;
+@keyframes slideUp {
+  95% {
+    transform: translateY(var(--up)) $initial-transform;
+  }
+
+  100% {
+    transform: translateY(var(--up)) rotateX(-2deg) scale(0);
+  }
+}
+
+@keyframes slideDown {
+  95% {
+    transform: translateY(var(--down)) $initial-transform;
+  }
+
+  100% {
+    transform: translateY(var(--down)) rotateX(-2deg) scale(0);
+  }
+}
+
+@keyframes slideActive {
+  0% {
+    transform: $initial-transform;
+  }
+
+  100% {
+    transform: translateY(var(--up));
+  }
+}
 
 .panel {
+  --slide-up     : #{$anim-dur} slideUp forwards;
+  --slide-down   : #{$anim-dur} slideDown forwards;
+  --slide-active : #{$anim-dur} slideActive none;
   background: #fff;
+  box-shadow: $box-shadow;
   cursor: pointer;
-  height: $panel-height;
+  height: calc(100vh - 45px);
   position: absolute;
-  transition: transform $transition-dur;
+  transform: $initial-transform;
+  transition: transform $anim-dur;
   width: 100%;
 
   &:hover {
-    transform: translateY(-$hover-space);
-  }
-
-  &.-slide-up {
-    transform: translateY(var(--slide-up));
-  }
-
-  &.-slide-down {
-    transform: translateY(var(--slide-down));
+    transform: translateY(-$hover-space) rotateX(-2deg) scale(0.81);
   }
 
   &.-active {
     cursor: auto;
-    overflow-y: scroll;
-  }
-
-  &.-slide-up,
-  &.-slide-down {
-    &::before {
-      opacity: 0;
-    }
-  }
-
-  &::before {
-    box-shadow: $box-shadow;
-    content: '';
-    height: 100vh;
-    position: absolute;
-    transition: opacity $transition-dur;
-    width: 100%;
-    z-index: -1;
+    transform: translateY(var(--up));
   }
 
   &::-webkit-scrollbar { // for chrome/safari
@@ -54,43 +58,9 @@ $transition-dur : 0.3s;
 
 @for $i from 0 through 4 {
   .panel-#{$i} {
-    --slide-up   : calc((#{$preview-height} * #{-$i}));
-    --slide-down : calc((#{$preview-height} * (5 - #{$i})));
-    top          : calc((#{$preview-height} * #{$i}) + #{$header-height});
-    z-index      : $i;
+    --up    : calc((100px * #{-$i}));
+    --down  : calc(100vh - #{$header-height} - (100px * #{$i}));
+    top     : calc((#{$header-height} + (100px * #{$i})));
+    z-index : $i;
   }
-}
-
-.panel-0 {
-  background: #c3f776;
-  // background: #D0FF71;
-
-  &::before {
-    opacity: 0;
-  }
-
-  &:hover::before {
-    opacity: 1;
-  }
-}
-
-.panel-1 {
-  background: url(/images/banner-bg.jpg) #afc084;
-  background-size: 30%;
-  background-blend-mode: color-burn;
-}
-
-.panel-2 {
-  background: #f8f4a3;
-}
-
-.panel-3 {
-  background: url(/images/banner-bg.jpg) #ffbe88;
-  background-size: 40%;
-  background-blend-mode: color-burn;
-  // background: #ffbe88;
-}
-
-.panel-4 {
-  background: #6f5f79;
 }
