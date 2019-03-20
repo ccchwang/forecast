@@ -35,7 +35,7 @@
   background: #fff;
   box-shadow: $box-shadow;
   cursor: pointer;
-  height: calc(100vh - 45px);
+  height: calc(100vh - 45px); // TODO: take out later!!
   position: absolute;
   transform: $initial-transform;
   transition: transform $anim-dur;
@@ -50,9 +50,15 @@
     transform: translateY(var(--up));
   }
 
-  &::-webkit-scrollbar { // for chrome/safari
-    height: 0;
-    width: 0;
+  &::-webkit-scrollbar { // for Chrome/Safari
+    // height: 0;
+    // width: 0;
+  }
+
+  @supports (-webkit-backdrop-filter: initial) { // for Safari
+    --slide-active: #{$anim-dur} slideActive forwards;
+    height: calc(100vh - #{$header-height});
+    overflow-x: hidden;
   }
 }
 

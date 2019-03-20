@@ -1,3 +1,5 @@
+import CheckSafari from '../utils/CheckSafari'
+
 export default class SlidePanels {
   constructor(el) {
     this.el = el
@@ -6,12 +8,14 @@ export default class SlidePanels {
   }
 
   init() {
-    this.hero   = document.getElementById('hero')
-    this.panels = [].slice.call(this.el.getElementsByClassName('panel'))
-    this.map    = {}
+    this.isSafari = CheckSafari()
+    this.hero     = document.getElementById('hero')
+    this.panels   = [].slice.call(this.el.getElementsByClassName('panel'))
+    this.map      = {}
     this.currId
     this.activeClass = '-active'
 
+    this.body     = document.body
     this.backLink = document.getElementById('back-link')
     this.navLinks = [].slice.call(document.getElementsByClassName('nav__link'))
   }
@@ -37,17 +41,41 @@ export default class SlidePanels {
   }
 
   movePanels(newId) {
-    for (var i in this.map) {
-      let direction = parseInt(i) === newId ? 'active' : (i < newId ? 'up' : 'down')
+    if (this.isSafari) {
+      window.scrollTo({ top: 0 })
+      this.body.style.setProperty('overflow', 'hidden')
 
-      this.map[i].style.setProperty('animation', `var(--slide-${direction})`)
+      for (var i in this.map) {
+        if (parseInt(i) === newId) {
+          this.map[i].style.setProperty('animation', 'var(--slide-active)')
+        }
+        else {
+          this.map[i].style.setProperty('opacity', '0')
+        }
+      }
+    }
+    else {
+      for (var i in this.map) {
+        let direction = parseInt(i) === newId ? 'active' : (i < newId ? 'up' : 'down')
+
+        this.map[i].style.setProperty('animation', `var(--slide-${direction})`)
+      }
     }
   }
 
   reset = () => {
     if (this.exists(this.currId)) {
+      let propToRemove = 'animation'
+
+      if (this.isSafari) {
+        this.map[this.currId].scrollTo({ top: 0 })
+        this.map[this.currId].style.removeProperty('animation')
+        this.body.style.removeProperty('overflow')
+        propToRemove = 'opacity'
+      }
+
       for (var i in this.map) {
-        this.map[i].style.removeProperty('animation')
+        this.map[i].style.removeProperty(propToRemove)
       }
 
       this.map[this.currId].classList.remove(this.activeClass)

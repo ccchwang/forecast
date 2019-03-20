@@ -1,7 +1,7 @@
 .hero {
   font-size: 18px;
   font-weight: 300;
-  transition: $anim-dur ($anim-dur + 0.05s) ease-in;
+  transition: ($anim-dur / 2) ($anim-dur + 0.05s) ease-in;
 
   &.-active {
     transform: translateY(-50%);
