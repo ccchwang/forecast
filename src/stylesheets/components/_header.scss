@@ -12,9 +12,10 @@
 .hero {
   font-size: 18px;
   font-weight: 300;
-  transition: ($anim-dur / 2) ($anim-dur + 0.025s) ease-in;
+  transition: transform ($anim-dur / 2) ($anim-dur + 0.05s) cubic-bezier(0.55, 0.085, 0.68, 0.53);
 
   .active & {
     transform: translateY(-50%);
+    transition-delay: $anim-dur + 0.2s
   }
 }

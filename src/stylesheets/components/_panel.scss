@@ -38,11 +38,12 @@
   height: calc(100vh - 45px); // TODO: take out later!!
   position: absolute;
   transform: $initial-transform;
-  transition: transform $anim-dur;
+  transition: transform $anim-dur $anim-ease;
   width: 100%;
 
   &:hover {
     transform: translateY(-$hover-space) rotateX(-2deg) scale(0.81);
+    transition-duration: $anim-dur / 1.75;
   }
 
   &.-active {
