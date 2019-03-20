@@ -8,3 +8,13 @@
   width: 100%;
   z-index: 100;
 }
+
+.hero {
+  font-size: 18px;
+  font-weight: 300;
+  transition: ($anim-dur / 2) ($anim-dur + 0.025s) ease-in;
+
+  .active & {
+    transform: translateY(-50%);
+  }
+}

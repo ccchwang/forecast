@@ -9,7 +9,6 @@ export default class SlidePanels {
 
   init() {
     this.isSafari = CheckSafari()
-    this.hero     = document.getElementById('hero')
     this.panels   = [].slice.call(this.el.getElementsByClassName('panel'))
     this.map      = {}
     this.currId
@@ -35,7 +34,7 @@ export default class SlidePanels {
       this.movePanels(newId)
 
       this.map[newId].classList.add(this.activeClass)
-      this.hero.classList.add(this.activeClass)
+      this.body.classList.add('active', `active-${newId}`)
       this.currId = newId
     }
   }
@@ -46,10 +45,7 @@ export default class SlidePanels {
       this.body.style.setProperty('overflow', 'hidden')
 
       for (var i in this.map) {
-        if (parseInt(i) === newId) {
-          this.map[i].style.setProperty('animation', 'var(--slide-active)')
-        }
-        else {
+        if (parseInt(i) !== newId) {
           this.map[i].style.setProperty('opacity', '0')
         }
       }
@@ -69,7 +65,6 @@ export default class SlidePanels {
 
       if (this.isSafari) {
         this.map[this.currId].scrollTo({ top: 0 })
-        this.map[this.currId].style.removeProperty('animation')
         this.body.style.removeProperty('overflow')
         propToRemove = 'opacity'
       }
@@ -79,23 +74,32 @@ export default class SlidePanels {
       }
 
       this.map[this.currId].classList.remove(this.activeClass)
-      this.hero.classList.remove(this.activeClass)
+      this.body.classList.remove('active', `active-${this.currId}`)
       this.currId = -1
     }
   }
 
   changeSection(newId) {
-    if (this.currId > newId) {
-      for (let i = this.currId; i > newId; i--) {
-        this.map[i].style.setProperty('animation', 'var(--slide-down)')
-      }
-    }
-
-    // remove active class off current
-    this.map[this.currId].classList.remove(this.activeClass)
+    // update body
+    this.body.classList.remove(`active-${this.currId}`)
+    this.body.classList.add(`active-${newId}`)
 
     // set new active
-    this.map[newId].style.setProperty('animation', 'var(--slide-active)')
+    if (this.isSafari) {
+      this.map[this.currId].style.setProperty('opacity', '0')
+      this.map[newId].style.removeProperty('opacity')
+    }
+    else {
+      if (this.currId > newId) {
+        for (let i = this.currId; i > newId; i--) {
+          this.map[i].style.setProperty('animation', 'var(--slide-down)')
+        }
+      }
+
+      this.map[newId].style.setProperty('animation', 'var(--slide-active)')
+    }
+
+    this.map[this.currId].classList.remove(this.activeClass)
     this.map[newId].classList.add(this.activeClass)
     this.currId = newId
   }

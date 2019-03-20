@@ -56,7 +56,6 @@
   }
 
   @supports (-webkit-backdrop-filter: initial) { // for Safari
-    --slide-active: #{$anim-dur} slideActive forwards;
     height: calc(100vh - #{$header-height});
     overflow-x: hidden;
   }

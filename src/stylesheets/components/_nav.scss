@@ -1,17 +1,25 @@
-.hero {
-  font-size: 18px;
-  font-weight: 300;
-  transition: ($anim-dur / 2) ($anim-dur + 0.05s) ease-in;
-
-  &.-active {
-    transform: translateY(-50%);
-  }
-}
-
 .nav {
   align-items: center;
   display: flex;
   height: $header-height;
   justify-content: space-between;
   overflow-y: hidden;
+}
+
+.nav__item {
+  font-size: inherit;
+  font-weight: inherit;
+
+  &:hover {
+    color: blueviolet;
+    text-decoration: underline;
+  }
+}
+
+@for $i from 0 through 4 {
+  .link-#{$i} {
+    .active-#{$i} & {
+      color: blueviolet;
+    }
+  }
 }
