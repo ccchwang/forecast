@@ -1,10 +1,30 @@
 .musings {
-  display: flex;
+  border-bottom: $border;
+  
+  @include breakpoint(large-tablet-up) {
+    display: flex;
+  }
 }
 
 .musings__sticky {
-  border-right: 2px solid #000;
-  height: calc(100vh - #{$header-height});
-  position: sticky;
-  top: 0;
+  @include breakpoint(large-tablet-up) {
+    height: 100%;
+    position: sticky;
+    top: 0;
+  }
+}
+
+.musings__title {
+  @include breakpoint(large-tablet-up) {
+    margin: 3rem 0;
+    transform: rotate(-90deg);
+  }
+}
+
+.musings__content {
+  padding: 2rem 1rem;
+  
+  @include breakpoint(large-tablet-up) {
+    border-left: $border;
+  }
 }
