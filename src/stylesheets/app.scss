@@ -2,6 +2,8 @@
 @import "setup/reset";
 @import "setup/typography";
 @import "setup/variables";
+@import "setup/mixins";
+@import "setup/functions";
 
 @import "base/elements";
 @import "base/typography";
@@ -11,4 +13,5 @@
 @import "components/panel";
 @import "components/nav";
 @import "components/title";
-@import "components/work-grid";
+@import "components/grid";
+@import "components/work";

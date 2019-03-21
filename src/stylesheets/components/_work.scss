@@ -1,0 +1,48 @@
+.work-content {
+  padding: 2rem 3rem;
+  
+  @include breakpoint(small-tablet-down) {
+    @include smooth;
+    color: #fff;
+    padding: 2rem;
+  }
+}
+
+.work-bg {
+  background-blend-mode: lighten;
+  background-size: cover;
+  background-position: center top;
+}
+
+.work-title {
+  @include Rubik;
+  font-size: rem(24);
+  letter-spacing: 0.025em;
+  line-height: 1.2;
+  
+  @include breakpoint(large-tablet-up) {
+    color: #6e5e78;
+    font-size: rem(35);
+  }
+}
+
+.work-text {
+  font-size: rem(15);
+  line-height: 1.6;
+  margin: 1.5rem 0 1rem;
+}
+
+.work-btn {
+  @include smooth;
+  background: #fff;
+  border-radius: 30px;
+  font-family: 'Rubik';
+  letter-spacing: 0.1em;
+  padding: 0.5em 1.25em;
+  text-transform: uppercase;
+  
+  @include breakpoint(large-tablet-up) {
+    background: #6e5e78;
+    color: #c3f776;
+  }
+}

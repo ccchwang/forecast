@@ -8,9 +8,14 @@
   }
 }
 
-// @include font-face('Decovar', 'DecovarAlpha-VF');
-
 // Mixins
-// @mixin Decovar {
-//   font-family: 'Decovar', 'Helvetica', 'Arial', sans-serif;
-// }
+@mixin Rubik {
+  font-family: 'Rubik', 'Tahoma', 'Helvetica', sans-serif;
+  font-weight: 700;
+  
+}
+
+@mixin Roboto {
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 300;
+}

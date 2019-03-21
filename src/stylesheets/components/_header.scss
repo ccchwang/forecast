@@ -1,6 +1,6 @@
 .header {
   background: #fff;
-  border-bottom: 1px solid #000;
+  border-bottom: 2px solid #000;
   height: $header-height;
   overflow: hidden;
   position: fixed;
@@ -10,12 +10,11 @@
 }
 
 .hero {
-  font-size: 18px;
-  font-weight: 300;
+  font-size: rem(18);
   transition: transform ($anim-dur / 2) ($anim-dur + 0.05s) cubic-bezier(0.55, 0.085, 0.68, 0.53);
 
   .active & {
     transform: translateY(-50%);
-    transition-delay: $anim-dur + 0.2s
+    transition-delay: $anim-dur + 0.15s
   }
 }

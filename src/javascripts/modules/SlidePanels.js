@@ -62,16 +62,17 @@ export default class SlidePanels {
   }
   
   reset = () => {
-    let propToRemove = 'animation'
-
     if (this.isSafari) {
       this.map[this.currId].scrollTo({ top: 0 })
-      this.body.style.removeProperty('overflow')
-      propToRemove = 'opacity'
-    }
 
-    for (var i in this.map) {
-      this.map[i].style.removeProperty(propToRemove)
+      for (var i in this.map) {
+        this.map[i].classList.remove('-hide-safari')
+      }
+    }
+    else {
+      for (var i in this.map) {
+        this.map[i].style.removeProperty('animation')
+      }
     }
 
     this.map[this.currId].classList.remove(this.activeClass)
@@ -86,17 +87,18 @@ export default class SlidePanels {
 
     // set new active
     if (this.isSafari) {
-      this.map[this.currId].style.setProperty('opacity', '0')
-      this.map[newId].style.removeProperty('opacity')
+      this.map[this.currId].classList.add('-hide-safari')
+      this.map[newId].classList.remove('-hide-safari')
     }
     else {
-      if (this.currId > newId) {
-        for (let i = this.currId; i > newId; i--) {
-          this.map[i].style.setProperty('animation', 'var(--slide-down)')
-        }
-      }
+      // TODO: make sure all necessary things have scroll
+      window.scrollTo({ top: 0 })
+      
+      for (var i in this.map) {
+        let direction = parseInt(i) === newId ? 'active' : (i < newId ? 'up' : 'down')
 
-      this.map[newId].style.setProperty('animation', 'var(--slide-active)')
+        this.map[i].style.setProperty('animation', `var(--slide-${direction})`)
+      }
     }
 
     this.map[this.currId].classList.remove(this.activeClass)
@@ -111,11 +113,10 @@ export default class SlidePanels {
    movePanels(newId) {
     if (this.isSafari) {
       window.scrollTo({ top: 0 })
-      this.body.style.setProperty('overflow', 'hidden')
 
       for (var i in this.map) {
         if (parseInt(i) !== newId) {
-          this.map[i].style.setProperty('opacity', '0')
+          this.map[i].classList.add('-hide-safari')
         }
       }
     }

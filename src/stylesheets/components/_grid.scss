@@ -1,0 +1,73 @@
+$grid-cols    : repeat(21, 1fr);
+$mobile-rows  : 13;
+$desktop-rows : 20;
+
+.grid-background {
+  display: grid;
+  grid-template: repeat(10, calc((100vh - 45px - 45px) / 10)) / $grid-cols;
+  position: sticky;
+  top: 90px;
+  z-index: -1;
+  
+  &::before {
+    background: #b9a8c3;
+    content: '';
+    grid-column: 1 / span 10;
+    grid-row: 3 / span 6;
+  }
+  
+  &::after {
+    background: #c3f776;
+    content: '';
+    grid-column: 13 / span 9;
+    grid-row: 2 / span 9;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template: repeat($mobile-rows, 25px) / $grid-cols;
+  margin: 5rem 0;
+  
+  @include breakpoint(large-tablet-up) {
+    grid-template: repeat($desktop-rows, 25px) / $grid-cols;
+  }
+  
+  .whha-bg {
+    background: url('/images/whha.png') #5786C0;
+    grid-row: 1 / span 7;
+    grid-column: 12 / span 10;
+  }
+
+  .whha-text {
+    grid-row: 2 / span 6;
+    grid-column: 1 / span 10;
+    padding: 1rem;
+  }
+}
+
+.grid__bg,
+.grid__content {
+  grid-column: 2 / span 19;
+}
+
+.grid__bg--pogo {
+  background: url('/images/pogo.png') #2b59c3;
+  grid-row: 1 / span ($mobile-rows - 1);
+  
+  @include breakpoint(large-tablet-up) {
+    grid-column: 2 / span 10;
+    grid-row: ($desktop-rows + 1- 16) / span 16;
+  }
+}
+
+.grid__content--pogo {
+  background: #2c59c3;
+  grid-row: ($mobile-rows + 1);
+  
+  @include breakpoint(large-tablet-up) {
+    background: none;
+    grid-column: 13 / span 9;
+    grid-row: 1;
+  }
+}

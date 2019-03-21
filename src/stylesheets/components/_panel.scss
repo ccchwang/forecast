@@ -35,7 +35,6 @@
   background: #fff;
   box-shadow: $box-shadow;
   cursor: pointer;
-  height: calc(100vh - 45px); // TODO: take out later!!
   position: absolute;
   transform: $initial-transform;
   transition: transform $anim-dur $anim-ease;
@@ -55,11 +54,6 @@
     // height: 0;
     // width: 0;
   }
-
-  @supports (-webkit-backdrop-filter: initial) { // for Safari
-    height: calc(100vh - #{$header-height});
-    overflow-x: hidden;
-  }
 }
 
 @for $i from 0 through 4 {
@@ -69,4 +63,32 @@
     top     : calc((#{$header-height} + (100px * #{$i})));
     z-index : $i;
   }
+}
+
+@supports (-webkit-backdrop-filter: initial) { // for Safari  
+  @keyframes hideSafari {
+    0% {
+      opacity: 0;
+      transform: scale(0);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(0);
+    }
+  }
+  
+  .panel {
+    height: calc(100vh - #{$header-height});
+    overflow-x: hidden;
+    
+    &.-hide-safari {
+      animation: hideSafari 100ms forwards;
+      transform: $initial-transform;
+      transition-duration: 0s;
+    } 
+  }   
+}
+
+.panel-0 {
+  background: #6f5f79;
 }
