@@ -6,7 +6,7 @@ $desktop-rows : 20;
   display: grid;
   grid-template: repeat(10, calc((100vh - 45px - 45px) / 10)) / $grid-cols;
   position: sticky;
-  top: 90px;
+  top: $header-height;
   z-index: -1;
   
   &::before {

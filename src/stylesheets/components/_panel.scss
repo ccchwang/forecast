@@ -29,12 +29,14 @@
 }
 
 .panel {
-  --slide-up     : #{$anim-dur} slideUp forwards;
-  --slide-down   : #{$anim-dur} slideDown forwards;
   --slide-active : #{$anim-dur} slideActive none;
+  --slide-down   : #{$anim-dur} slideDown forwards;
+  --slide-up     : #{$anim-dur} slideUp forwards;
   background: #fff;
   box-shadow: $box-shadow;
   cursor: pointer;
+  height: calc(100vh - #{$header-height});
+  overflow: hidden;
   position: absolute;
   transform: $initial-transform;
   transition: transform $anim-dur $anim-ease;
@@ -76,19 +78,24 @@
       transform: scale(0);
     }
   }
-  
-  .panel {
-    height: calc(100vh - #{$header-height});
-    overflow-x: hidden;
-    
-    &.-hide-safari {
-      animation: hideSafari 100ms forwards;
-      transform: $initial-transform;
-      transition-duration: 0s;
-    } 
-  }   
+
+  .-hide-safari {
+    animation: hideSafari 100ms forwards;
+    transform: $initial-transform;
+    transition-duration: 0s;
+  } 
 }
 
 .panel-0 {
   background: #6f5f79;
+}
+
+.panel-inner {
+  height: 100%;
+  overflow-y: scroll;
+  pointer-events: none;
+  
+  .active & {
+    pointer-events: initial;
+  }
 }
