@@ -61,7 +61,7 @@ $desktop-rows : 20;
   margin: 8rem 0;
   
   @include breakpoint(large-tablet-up) {
-    grid-template: repeat($desktop-rows, 25px) / $grid-cols;
+    grid-template: repeat($desktop-rows, calc(70vh / #{$desktop-rows})) / $grid-cols;
     margin: 15rem 0;
   }
 }
@@ -74,11 +74,16 @@ $desktop-rows : 20;
 .grid__bg {
   grid-row: 1 / span ($mobile-rows - 1);
   
+  @include breakpoint(large-tablet-up) {
+    height: 0;
+    padding-top: 62.5%;
+  }
+  
   &--pogo,
   &--shop {
     @include breakpoint(large-tablet-up) {
       grid-column: 2 / span 10;
-      grid-row: ($desktop-rows + 1- 16) / span 16;
+      grid-row: ($desktop-rows + 1- 16);
     }
   }
   
@@ -91,7 +96,7 @@ $desktop-rows : 20;
     
     @include breakpoint(large-tablet-up) {
       grid-column: 12 / span 10;
-      grid-row: 1 / span 16;
+      grid-row: 1;
     }
   }
   
