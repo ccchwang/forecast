@@ -3,10 +3,11 @@ $mobile-rows  : 13;
 $desktop-rows : 20;
 
 .grid-bg {
+  bottom: 0;
   display: grid;
   grid-template: repeat(10, calc((100vh - #{$header-height} - #{$header-height}) / 10)) / $grid-cols;
-  position: sticky;
-  top: $header-height;
+  position: fixed;
+  width: 100%;
   z-index: -1;
   
   &::before {
@@ -55,6 +56,12 @@ $desktop-rows : 20;
   }
 }
 
+.grid-container {
+  @include breakpoint(large-tablet-up) {
+    margin-top: 11vh;
+  }
+}
+
 .grid {
   display: grid;
   grid-template: repeat($mobile-rows, 25px) / $grid-cols;
@@ -63,6 +70,12 @@ $desktop-rows : 20;
   @include breakpoint(large-tablet-up) {
     grid-template: repeat($desktop-rows, calc(70vh / #{$desktop-rows})) / $grid-cols;
     margin: 15rem 0;
+  }
+  
+  &--first {
+    @include breakpoint(large-tablet-up) {
+      margin-top: 0;
+    }
   }
 }
 

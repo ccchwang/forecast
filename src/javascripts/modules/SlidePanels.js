@@ -91,14 +91,7 @@ export default class SlidePanels {
       this.map[newId].classList.remove('-hide-safari')
     }
     else {
-      // TODO: make sure all necessary things have scroll
-      window.scrollTo({ top: 0 })
-      
-      for (var i in this.map) {
-        let direction = parseInt(i) === newId ? 'active' : (i < newId ? 'up' : 'down')
-
-        this.map[i].style.setProperty('animation', `var(--slide-${direction})`)
-      }
+      this.setDirection(newId)
     }
 
     this.map[this.currId].classList.remove(this.activeClass)
@@ -111,21 +104,25 @@ export default class SlidePanels {
    ***********************/
   
    movePanels(newId) {
+    window.scrollTo({ top: 0 })
+    
     if (this.isSafari) {
-      window.scrollTo({ top: 0 })
-
       for (var i in this.map) {
         if (parseInt(i) !== newId) {
           this.map[i].classList.add('-hide-safari')
         }
       }
     }
-    else {
-      for (var i in this.map) {
-        let direction = parseInt(i) === newId ? 'active' : (i < newId ? 'up' : 'down')
+    else { 
+      this.setDirection(newId)
+    }
+  }
+  
+  setDirection(newId) {
+    for (var i in this.map) {
+      let direction = parseInt(i) === newId ? 'active' : (i < newId ? 'up' : 'down')
 
-        this.map[i].style.setProperty('animation', `var(--slide-${direction})`)
-      }
+      this.map[i].style.setProperty('animation', `var(--slide-${direction})`)
     }
   }
 
