@@ -1,0 +1,56 @@
+.lab-gallery {
+  margin: 0 auto;
+  max-width: calc(1200px + 4rem);
+  padding: 1rem;
+}
+
+.lab-figure {
+  margin: 2rem 0 2rem auto;
+  
+  @include breakpoint(large-tablet-up) {
+    max-width: 600px;
+ 
+    &--carousel02,
+    &--layout02 {
+      margin-left: 0;
+    }
+  }
+}
+
+.lab-bg {
+  height: 0;
+  padding-top: 56%;
+  position: relative;
+  
+  &--microcosm::before {
+    background: url('/images/microcosm.png');
+  }
+  
+  &--carousel01::before {
+    background: url('/images/carousel01.png');
+  }
+  
+  &--carousel02::before {
+    background: url('/images/carousel02.png');
+  }
+  
+  &--layout01::before {
+    background: url('/images/layout01.png');
+  }
+  
+  &--layout02::before {
+    background: url('/images/layout02.png');
+  }
+  
+  &::before {
+    background-position: top center;
+    background-size: cover;
+    content: '';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+}
+

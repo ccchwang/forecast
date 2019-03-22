@@ -2,15 +2,15 @@ $grid-cols    : repeat(21, 1fr);
 $mobile-rows  : 13;
 $desktop-rows : 20;
 
-.grid-background {
+.grid-bg {
   display: grid;
-  grid-template: repeat(10, calc((100vh - 45px - 45px) / 10)) / $grid-cols;
+  grid-template: repeat(10, calc((100vh - #{$header-height} - #{$header-height}) / 10)) / $grid-cols;
   position: sticky;
   top: $header-height;
   z-index: -1;
   
   &::before {
-    background: #b9a8c3;
+    background: #c0b2c7;
     content: '';
     grid-column: 1 / span 10;
     grid-row: 3 / span 6;
@@ -21,6 +21,37 @@ $desktop-rows : 20;
     content: '';
     grid-column: 13 / span 9;
     grid-row: 2 / span 9;
+  }
+  
+  &--lab {
+    grid-template: repeat(10, calc((100vh - #{$header-height}) / 10)) / $grid-cols;
+    top: 0;
+  
+    &::before {
+      background: #fef577;
+      grid-column: 1 / span 16;
+      grid-row: 4 / span 7;      
+      
+      @include breakpoint(large-tablet-up) {
+        grid-column: 1 / span 14;
+      }
+    }
+    
+    &::after {
+      background: #7b9750;
+      grid-column: 3 / span 6;
+      grid-row: 1 / span 3;
+      
+      @include breakpoint(large-tablet-up) {
+        grid-column: 2 / span 6;
+      }
+    }
+    
+    .red-strip {
+      background: #FE4814;
+      grid-column: 1 / span 2;
+      grid-row: 1 / span 3;
+    }
   }
 }
 
@@ -104,5 +135,3 @@ $desktop-rows : 20;
     }
   }
 }
-
-
