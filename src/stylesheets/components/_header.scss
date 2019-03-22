@@ -10,7 +10,6 @@
 }
 
 .hero {
-  font-size: rem(18);
   transition: transform ($anim-dur / 2) ($anim-dur + 0.05s) cubic-bezier(0.55, 0.085, 0.68, 0.53);
 
   .active & {

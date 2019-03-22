@@ -29,7 +29,24 @@
   }
 }
 
+
+// Blogs
+.musings__blog {
+  margin: 1rem 0;
+}
+
+
+// Presentations
+.musings__presentations {
+  @include breakpoint(large-tablet-up) {
+    display: flex;
+  }
+}
+
 .musings__figure {
+  flex-basis: 400px;
+  margin: 1rem 2rem;
+  
   &:hover {
     .musings__figure__img {
       transform: translateY(-10px);
