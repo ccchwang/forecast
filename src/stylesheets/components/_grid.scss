@@ -49,16 +49,22 @@ $desktop-rows : 20;
     }
     
     .red-strip {
-      background: #FE4814;
+      background: $red;
       grid-column: 1 / span 2;
       grid-row: 1 / span 3;
+    }
+  }
+  
+  &--contact {
+    &::after {
+      background: #fef577;
     }
   }
 }
 
 .grid-container {
   @include breakpoint(large-tablet-up) {
-    margin-top: 11vh;
+    margin-top: 9vh;
   }
 }
 
@@ -115,7 +121,6 @@ $desktop-rows : 20;
   
   &--shop {
     background: url('/images/shop.png') #f1c8b1;
-    background-blend-mode: exclusion !important;
   }
 }
 

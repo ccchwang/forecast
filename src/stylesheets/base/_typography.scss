@@ -1,3 +1,22 @@
 body {
   @include Roboto;
 }
+
+.label {
+  @include Rubik;
+  color: #945ec2;
+  font-size: rem(13);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.heading {
+  font-family: 'Rubik', 'Tahoma', 'Helvetica', sans-serif;
+  font-size: 1.3rem;
+  line-height: 1.2;
+  margin-top: 0.5rem;
+  
+  &:hover {
+    color: $red;
+  }
+}

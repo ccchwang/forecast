@@ -1,5 +1,8 @@
 .title {
-  font-size: rem(15);
-  padding: 1em 0;
+  @include Rubik;
+  border-bottom: $border;
+  color: #222;
+  font-size: rem(22);
+  padding: 0.75em 0;
   text-align: center;
 }

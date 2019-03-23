@@ -10,7 +10,7 @@
   font-size: inherit;
 
   &:hover {
-    color: #FE4814;
+    color: $red;
     text-decoration: underline;
   }
 }
@@ -18,7 +18,7 @@
 @for $i from 0 through 4 {
   .link-#{$i} {
     .active-#{$i} & {
-      color: #FE4814;
+      color: $red;
       text-decoration: underline;
     }
   }

@@ -4,7 +4,7 @@
   }
 
   100% {
-    transform: translateY(var(--up)) rotateX(-2deg) scale(0);
+    transform: translateY(var(--up)) rotateX(-1.8deg) scale(0);
   }
 }
 
@@ -14,7 +14,7 @@
   }
 
   100% {
-    transform: translateY(var(--down)) rotateX(-2deg) scale(0);
+    transform: translateY(var(--down)) rotateX(-1.8deg) scale(0);
   }
 }
 
@@ -43,18 +43,13 @@
   width: 100%;
 
   &:hover {
-    transform: translateY(-$hover-space) rotateX(-2deg) scale(0.81);
+    transform: translateY(-$hover-space) rotateX(-1.8deg) scale(0.77);
     transition-duration: $anim-dur / 1.75;
   }
 
   &.-active {
     cursor: auto;
     transform: translateY(var(--up));
-  }
-
-  &::-webkit-scrollbar { // for Chrome/Safari
-    // height: 0;
-    // width: 0;
   }
 }
 
@@ -100,6 +95,10 @@
 
 .panel-3 {
   background: #BFBDA7;
+}
+
+.panel-4 {
+  background: $red;
 }
 
 .panel-inner {
