@@ -96,6 +96,10 @@ $desktop-rows : 20;
   @include breakpoint(large-tablet-up) {
     height: 0;
     padding-top: 62.5%;
+    
+    &--whha {
+      padding-top: 110%;
+    }
   }
   
   &--pogo,
@@ -107,20 +111,20 @@ $desktop-rows : 20;
   }
   
   &--pogo {
-    background: url('/images/work-pogo2x.jpg') #2b59c3;
+    background: url('/images/work-pogo.jpg') #2b59c3;
   }
   
   &--whha {
-    background: url('/images/whha.png') #5786C0;
+    background: url('/images/work-whha.jpg') #5786C0;
     
     @include breakpoint(large-tablet-up) {
-      grid-column: 12 / span 10;
+      grid-column: 12 / span 7;
       grid-row: 1;
     }
   }
   
   &--shop {
-    background: url('/images/shop.png') #f1c8b1;
+    background: url('/images/work-shop.jpg') #ffc0c0;
   }
 }
 
@@ -137,7 +141,7 @@ $desktop-rows : 20;
   
   &--pogo {
     @include breakpoint(small-tablet-down) {
-      background: #2c59c3;
+      background: #2c59ca;
     }
   }
   
