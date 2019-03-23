@@ -4,7 +4,7 @@
   @include breakpoint(small-tablet-down) {
     @include smooth;
     color: #fff;
-    padding: 2rem;
+    padding: 2.5rem 2rem;
   }
 }
 
@@ -24,6 +24,11 @@
     color: #6e5e78;
     font-size: rem(35);
   }
+  
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
 }
 
 .work-text {
@@ -37,6 +42,7 @@
   @include smooth;
   background: #fff;
   border-radius: 30px;
+  color: #111;
   cursor: initial;
   letter-spacing: 0.1em;
   margin: 0.25em 0;
