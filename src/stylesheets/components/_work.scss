@@ -29,7 +29,7 @@
 .work-text {
   font-size: rem(15);
   line-height: 1.6;
-  margin: 1.5rem 0 1rem;
+  margin: 1.5rem 0 2rem;
 }
 
 .work-btn {
@@ -37,7 +37,9 @@
   @include smooth;
   background: #fff;
   border-radius: 30px;
+  cursor: initial;
   letter-spacing: 0.1em;
+  margin: 0.25em 0;
   padding: 0.5em 1.25em;
   text-transform: uppercase;
   

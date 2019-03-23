@@ -158,7 +158,7 @@ $desktop-rows : 20;
   }
   
   &--tnc {
-    background: url('/images/work-tnc1.jpg') #613e86;
+    background: url('/images/work-tnc.jpg') #613e86;
     
     @include breakpoint(large-tablet-up) {
       grid-column: 12 / span 10;
