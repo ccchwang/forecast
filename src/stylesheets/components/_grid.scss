@@ -100,10 +100,15 @@ $desktop-rows : 20;
     &--whha {
       padding-top: 110%;
     }
+    
+    &--bethesda {
+      padding-top: 58%;
+    }
   }
   
   &--pogo,
-  &--shop {
+  &--shop,
+  &--craig {
     @include breakpoint(large-tablet-up) {
       grid-column: 2 / span 10;
       grid-row: ($desktop-rows + 1- 16);
@@ -126,13 +131,27 @@ $desktop-rows : 20;
   &--shop {
     background: url('/images/work-shop.jpg') #ffc0c0;
   }
+  
+  &--craig {
+    background: url('/images/work-craig.jpg') #00a9e0;
+  }
+  
+  &--bethesda {
+    background: url('/images/work-bethesda.jpg') #3b4ab8;
+    
+    @include breakpoint(large-tablet-up) {
+      grid-column: 12 / span 9;
+      grid-row: 1;
+    }
+  }
 }
 
 .grid__content {
   grid-row: ($mobile-rows + 1);
   
   &--pogo,
-  &--shop {
+  &--shop,
+  &--craig {
     @include breakpoint(large-tablet-up) {
       grid-column: 13 / span 9;
       grid-row: 1;
@@ -145,20 +164,35 @@ $desktop-rows : 20;
     }
   }
   
-  &--whha {
-    @include breakpoint(small-tablet-down) {
-      background: #5786C0;
-    }
-    
+  &--whha,
+  &--bethesda {
     @include breakpoint(large-tablet-up) {
       grid-column: 1 / span 9;
       grid-row: 4;
     }
   }
   
+  &--whha {
+    @include breakpoint(small-tablet-down) {
+      background: #5786C0;
+    }
+  }
+  
   &--shop {
     @include breakpoint(small-tablet-down) {
       background: pink;
+    }
+  }
+  
+  &--craig {
+    @include breakpoint(small-tablet-down) {
+      background: #00a9e0;
+    }
+  }
+  
+  &--bethesda {
+    @include breakpoint(small-tablet-down) {
+      background: #3b4ab8;
     }
   }
 }
