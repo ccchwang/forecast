@@ -101,17 +101,31 @@ $desktop-rows : 20;
       padding-top: 110%;
     }
     
-    &--bethesda {
+    &--bethesda,
+    &--tnc {
       padding-top: 58%;
+    }
+    
+    &--optify {
+      padding-top: 69%;
     }
   }
   
   &--pogo,
   &--shop,
-  &--craig {
+  &--craig,
+  &--optify {
     @include breakpoint(large-tablet-up) {
       grid-column: 2 / span 10;
       grid-row: ($desktop-rows + 1- 16);
+    }
+  }
+  
+  &--tnc,
+  &--whha,
+  &--bethesda {
+    @include breakpoint(large-tablet-up) {
+      grid-row: 1;
     }
   }
   
@@ -124,12 +138,11 @@ $desktop-rows : 20;
     
     @include breakpoint(large-tablet-up) {
       grid-column: 12 / span 7;
-      grid-row: 1;
     }
   }
   
   &--shop {
-    background: url('/images/work-shop.jpg') #ffc0c0;
+    background: url('/images/work-shop.jpg') #d37f8d;
   }
   
   &--craig {
@@ -141,8 +154,19 @@ $desktop-rows : 20;
     
     @include breakpoint(large-tablet-up) {
       grid-column: 12 / span 9;
-      grid-row: 1;
     }
+  }
+  
+  &--tnc {
+    background: url('/images/work-tnc1.jpg') #613e86;
+    
+    @include breakpoint(large-tablet-up) {
+      grid-column: 12 / span 10;
+    }
+  }
+  
+  &--optify {
+    background: url('/images/work-optify.jpg') #2b59c3;
   }
 }
 
@@ -151,24 +175,27 @@ $desktop-rows : 20;
   
   &--pogo,
   &--shop,
-  &--craig {
+  &--craig,
+  &--optify {
     @include breakpoint(large-tablet-up) {
       grid-column: 13 / span 9;
       grid-row: 1;
     }
   }
   
-  &--pogo {
-    @include breakpoint(small-tablet-down) {
-      background: #2c59ca;
-    }
-  }
   
   &--whha,
-  &--bethesda {
+  &--bethesda,
+  &--tnc {
     @include breakpoint(large-tablet-up) {
       grid-column: 1 / span 9;
       grid-row: 4;
+    }
+  }
+  
+  &--pogo {
+    @include breakpoint(small-tablet-down) {
+      background: #2c59ca;
     }
   }
   
@@ -180,7 +207,7 @@ $desktop-rows : 20;
   
   &--shop {
     @include breakpoint(small-tablet-down) {
-      background: pink;
+      background: #d37f8d;
     }
   }
   
@@ -193,6 +220,18 @@ $desktop-rows : 20;
   &--bethesda {
     @include breakpoint(small-tablet-down) {
       background: #3b4ab8;
+    }
+  }
+  
+  &--tnc {
+    @include breakpoint(small-tablet-down) {
+      background: #613e86;
+    }
+  }
+  
+  &--optify {
+    @include breakpoint(small-tablet-down) {
+      background: #2b59c3;
     }
   }
 }
