@@ -1,3 +1,10 @@
 export default function CheckSafari() {
-  return /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || (typeof safari !== 'undefined' && safari.pushNotification));
+  var docEl    = document.documentElement, s
+  var isSafari = false;
+  
+  if (docEl && (s = docEl.style)) {
+    isSafari = typeof s.WebkitBackdropFilter === "string"
+  }
+  
+  return isSafari
 }
