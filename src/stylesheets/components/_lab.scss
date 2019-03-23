@@ -6,6 +6,8 @@
 
 .lab-figure {
   margin: 2rem 0 2rem auto;
+  position: relative;
+  overflow: hidden;
   
   @include breakpoint(large-tablet-up) {
     max-width: 600px;
@@ -15,42 +17,68 @@
       margin-left: 0;
     }
   }
+  
+  &:hover {
+    .lab-screen {
+      opacity: 1;
+      transform: scale(1.01)
+    }
+    
+    .lab-video {
+      opacity: 1;
+      transform: scale(0.7);
+    }
+  }
 }
 
 .lab-bg {
+  background-position: top center;
+  background-size: cover;
   height: 0;
   padding-top: 56%;
-  position: relative;
   
-  &--microcosm::before {
-    background: url('/images/microcosm.png');
+  &--microcosm {
+    background-image: url('/images/microcosm.png');
   }
   
-  &--carousel01::before {
-    background: url('/images/carousel01.png');
+  &--carousel01 {
+    background-image: url('/images/carousel01.png');
   }
   
-  &--carousel02::before {
-    background: url('/images/carousel02.png');
+  &--carousel02 {
+    background-image: url('/images/carousel02.png');
   }
   
-  &--layout01::before {
-    background: url('/images/layout01.png');
+  &--layout01 {
+    background-image: url('/images/layout01.png');
   }
   
-  &--layout02::before {
-    background: url('/images/layout02.png');
-  }
-  
-  &::before {
-    background-position: top center;
-    background-size: cover;
-    content: '';
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 100%;
+  &--layout02 {
+    background-image: url('/images/layout02.png');
   }
 }
 
+.lab-screen {
+  filter: blur(3px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  // transition: 0.15s ease-in;
+}
+
+.lab-video {
+  position: absolute;
+  // max-width: 420px;
+  // z-index: 1;
+  top: 0;
+  // bottom: 0;
+  left: 0;
+  // right: 0;
+  // margin: auto;
+  opacity: 0;
+  // transition: transform 0.15s ease-in;
+  width: 100%;
+  transform: scale(0.68);
+}
