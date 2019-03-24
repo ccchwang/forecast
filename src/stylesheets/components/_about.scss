@@ -1,17 +1,19 @@
+$margin: 1.25rem;
+
 .about {
   margin: 3.5rem auto;
-  padding: 1rem;
+  padding: 2rem;
   
   @include breakpoint(large-tablet-up) {
     display: flex;
-    max-width: 900px;
+    max-width: calc(900px + 2rem);
   }
 }
 
 .about--right {
   @include breakpoint(large-tablet-up) {
     flex-basis: 60%;
-    margin-left: 1.25rem;
+    margin-left: $margin;
     order: 2;
   }
 }
@@ -40,8 +42,8 @@
   border-radius: 100%;
   border: 8px dotted $red;
   flex-shrink: 0;
-  height: 170px;
-  margin-right: 1.25rem;
+  height: 160px;
+  margin-right: $margin;
   padding: 0.25rem;
   width: 140px;
 }
@@ -66,7 +68,13 @@
 
 .about__blurb {
   border: 13px ridge yellow;
+  height: 400px;
   line-height: 1.5;
-  margin: 1.25rem 0;
-  padding: 1.5rem;
+  margin: $margin 0;
+  overflow-y: auto;
+  padding: 1.5rem 1.7rem;
+  
+  @include breakpoint(large-tablet-up) {
+    height: calc(400px - 160px - #{$margin});
+  }
 }
