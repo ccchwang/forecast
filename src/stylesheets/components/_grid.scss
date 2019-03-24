@@ -56,6 +56,13 @@ $desktop-rows : 20;
       grid-column: 1 / span 2;
       grid-row: 1 / span 3;
     }
+    
+    .subtitle {
+      font-size: 1.5rem;
+      grid-column: 2 / span 10;
+      grid-row: 4;
+      padding: 1rem;
+    }
   }
   
   &--contact {
