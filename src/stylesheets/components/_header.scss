@@ -14,7 +14,11 @@
   font-size: rem(15);
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  transition: transform ($anim-dur / 2) ($anim-dur + 0.05s) cubic-bezier(0.55, 0.085, 0.68, 0.53);
+  transition: 
+    transform 
+    ($anim-dur / 2) 
+    ($anim-dur + 0.05s) 
+    cubic-bezier(0.55, 0.085, 0.68, 0.53);
 
   .active & {
     transform: translateY(-50%);

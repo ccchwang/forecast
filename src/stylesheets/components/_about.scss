@@ -1,0 +1,47 @@
+.about {
+  margin: 2.5rem auto;
+  padding: 1rem;
+  
+  @include breakpoint(large-tablet-up) {
+    display: flex;
+    max-width: 900px;
+  }
+}
+
+.about--right {
+  @include breakpoint(large-tablet-up) {
+    flex-basis: 60%;
+    margin-left: 1rem;
+    order: 2;
+  }
+}
+
+.about__container {
+  display: flex;
+}
+
+.about__me {
+  background: #c3f776;
+  flex-basis: 40%;
+  height: 500px;
+}
+
+.about__circle {
+  background: yellow;
+  border-radius: 100%;
+  flex-shrink: 0;
+  height: 140px;
+  margin-right: 1rem;
+  width: 140px;
+}
+
+.about__resume {
+  background: red;
+  flex-basis: 100%;
+}
+
+.about__blurb {
+  background: blue;
+  height: 100px;
+  margin: 1rem 0;
+}
