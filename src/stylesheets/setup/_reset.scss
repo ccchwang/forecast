@@ -34,8 +34,10 @@ ol, ul {
 *:after {
   box-sizing: border-box;
 }
-*:focus {
-  outline: none;
+@include breakpoint(large-tablet-up) {
+  *:focus {
+    outline: none;
+  }
 }
 button {
   background: none;

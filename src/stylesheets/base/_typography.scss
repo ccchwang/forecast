@@ -16,7 +16,8 @@ body {
   line-height: 1.2;
   margin-top: 0.5rem;
   
-  &:hover {
+  &:hover,
+  &:focus {
     color: $red;
     text-decoration: underline;
   }

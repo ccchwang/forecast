@@ -75,8 +75,13 @@
   @include breakpoint(large-tablet-up) {
     margin: 1rem 2rem;
     max-width: 350px;
-    
-    &:hover {
+  }
+}
+
+.musings__figure__link {
+  @include breakpoint(large-tablet-up) {
+    &:hover,
+    &:focus {
       .musings__figure__img {
         transform: translateY(-8px);
       }
