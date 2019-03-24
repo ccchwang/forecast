@@ -1,5 +1,5 @@
 .about {
-  margin: 2.5rem auto;
+  margin: 3.5rem auto;
   padding: 1rem;
   
   @include breakpoint(large-tablet-up) {
@@ -11,7 +11,7 @@
 .about--right {
   @include breakpoint(large-tablet-up) {
     flex-basis: 60%;
-    margin-left: 1rem;
+    margin-left: 1.25rem;
     order: 2;
   }
 }
@@ -21,27 +21,52 @@
 }
 
 .about__me {
-  background: #c3f776;
+  border: 16px double #c3f776;
   flex-basis: 40%;
-  height: 500px;
+  height: 400px;
+  position: relative;
 }
 
-.about__circle {
-  background: yellow;
+.about__me__text {
+  @include Rubik;
+  bottom: -2.5rem;
+  color: #79588f;
+  font-size: rem(90);
+  left: -2.5rem;
+  position: absolute;
+}
+
+.about__img {
   border-radius: 100%;
+  border: 8px dotted $red;
   flex-shrink: 0;
-  height: 140px;
-  margin-right: 1rem;
+  height: 170px;
+  margin-right: 1.25rem;
+  padding: 0.25rem;
   width: 140px;
 }
 
 .about__resume {
-  background: red;
+  @include Rubik;
+  background: #7b9750;
+  border: 15px outset #1b601b;
+  color: #c3f776;
   flex-basis: 100%;
+  font-size: rem(30);
+  letter-spacing: 0.05em;
+  text-shadow: 4px 4px #000;
+  text-transform: uppercase;
+  transition: color 0.2s, text-shadow 0.2s;
+  
+  &:hover {
+    color: yellow;
+    text-shadow: 0px 0px #000;
+  }
 }
 
 .about__blurb {
-  background: blue;
-  height: 100px;
-  margin: 1rem 0;
+  border: 13px ridge yellow;
+  line-height: 1.5;
+  margin: 1.25rem 0;
+  padding: 1.5rem;
 }
