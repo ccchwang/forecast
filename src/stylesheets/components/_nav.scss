@@ -8,11 +8,12 @@
 
 .nav__item {
   font-size: inherit;
+  letter-spacing: inherit;
   text-transform: inherit;
 
   &:hover,
   &:focus {
-    color: $red;
+    color: $red-link;
     text-decoration: underline;
   }
 }
@@ -20,7 +21,7 @@
 @for $i from 0 through 4 {
   .link-#{$i} {
     .active-#{$i} & {
-      color: $red;
+      color: $red-link;
       text-decoration: underline;
     }
   }
