@@ -67,11 +67,15 @@ $desktop-rows : 20;
   
   &--contact {
     &::after {
-      background: #fef577;
+      background: #f4805f;
+      grid-column-start: 14;
+      grid-row: 1 / span 10;
     }
     
     &::before {
-      background: #f18264;
+      background: #ffa429;
+      grid-column: 2 / span 10;
+      grid-row: 3 / span 6;
     }
   }
   

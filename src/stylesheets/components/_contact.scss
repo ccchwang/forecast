@@ -1,18 +1,22 @@
 .contact-btns {
-  margin-top: 5rem;
+  margin-top: 4rem;
   text-align: center;
-  
-  @include breakpoint(large-tablet-up) {
-    margin-left: 5rem;
-    text-align: left;
-  }
 }
 
 .contact-btn {
   @include Rubik;
   color: #222;
-  display: block;
+  display: inline-block;
   font-size: rem(70);
-  margin: 4rem 1rem;
+  margin: 2rem 1rem;
   text-decoration: underline;
+  
+  @include breakpoint(large-tablet-up) {
+    margin: 2rem 100% 2rem 6rem;
+  }
+  
+  &:hover,
+  &:focus {
+    color: #fff;
+  }
 }
