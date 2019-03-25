@@ -2,7 +2,6 @@
   padding: 2rem 4rem;
   
   @include breakpoint(small-tablet-down) {
-    @include smooth;
     color: #fff;
     padding: 2.5rem 2rem;
   }
@@ -19,6 +18,10 @@
   font-size: rem(24);
   letter-spacing: 0.025em;
   line-height: 1.2;
+  
+  @include breakpoint(small-tablet-down) {
+    @include smooth;
+  }
   
   @include breakpoint(large-tablet-up) {
     color: #6e5e78;

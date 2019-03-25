@@ -5,7 +5,7 @@
     display: flex;
     
     &.-slides {
-      min-height: 90vh;
+      min-height: 85vh;
     }
   }
 }
@@ -46,7 +46,7 @@
 }
 
 .musings__content {
-  @include smooth;  // TODO: check smoothing
+  @include smooth;
   padding: 2rem;
   
   @include breakpoint(large-tablet-up) {
@@ -72,8 +72,6 @@
     display: flex;
     flex-wrap: wrap;
     max-width: 1350px;
-    padding-left: 3rem;
-    padding-right: 3rem;
   }
 }
 
