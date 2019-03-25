@@ -21,7 +21,9 @@
 @for $i from 0 through 4 {
   .link-#{$i} {
     .active-#{$i} & {
+      @include smooth;
       color: $red-link;
+      font-weight: 700;
       text-decoration: underline;
     }
   }

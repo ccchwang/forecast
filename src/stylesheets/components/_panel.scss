@@ -1,13 +1,3 @@
-@keyframes slideUp {
-  95% {
-    transform: translateY(var(--up)) $initial-transform;
-  }
-
-  100% {
-    transform: translateY(var(--up)) rotateX(-1.8deg) scale(0);
-  }
-}
-
 @keyframes slideDown {
   95% {
     transform: translateY(var(--down)) $initial-transform;
@@ -31,7 +21,6 @@
 .panel {
   --slide-active : #{$anim-dur} slideActive none;
   --slide-down   : #{$anim-dur} slideDown forwards;
-  --slide-up     : #{$anim-dur} slideUp forwards;
   background: #fff;
   box-shadow: $box-shadow;
   cursor: pointer;

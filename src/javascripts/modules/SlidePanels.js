@@ -119,8 +119,8 @@ export default class SlidePanels {
   }
   
   setDirection(newId) {
-    for (var i in this.map) {
-      let direction = parseInt(i) === newId ? 'active' : (i < newId ? 'up' : 'down')
+    for (let i = newId; i < this.panels.length; i++) {
+      let direction = parseInt(i) === newId ? 'active' : 'down'
 
       this.map[i].style.setProperty('animation', `var(--slide-${direction})`)
     }
