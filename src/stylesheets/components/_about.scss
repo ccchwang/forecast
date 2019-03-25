@@ -38,14 +38,38 @@ $margin: 1.25rem;
   position: absolute;
 }
 
-.about__img {
+.about__imgs {
   border-radius: 100%;
   border: 8px dotted $red;
   flex-shrink: 0;
   height: 160px;
   margin-right: $margin;
-  padding: 0.25rem;
   width: 140px;
+  
+  @include breakpoint(large-tablet-up) {
+    position: relative;
+    
+    &:hover {
+      .about__img--me {
+        display: block;
+      }
+    }
+  }
+}
+
+.about__img {
+  border-radius: 100%;
+  padding: 0.25rem;
+  
+  &--me {
+    display: none;
+    
+    @include breakpoint(large-tablet-up) {
+      left: 0;
+      position: absolute;
+      top: 0;
+    }
+  }
 }
 
 .about__resume {
