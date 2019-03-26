@@ -16,7 +16,7 @@ export default class SlidePanels {
       var onMouseOver = function() {
         var video = document.createElement("video")
     
-        video.setAttribute("src", `/preview${i}.mov`)
+        video.setAttribute("src", `./preview${i}.mov`)
         video.setAttribute("class", "lab-video")
         video.setAttribute("autoplay", "true")
         video.setAttribute("loop", "true")

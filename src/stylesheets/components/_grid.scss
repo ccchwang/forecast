@@ -169,11 +169,11 @@ $desktop-rows : 20;
   }
   
   &--pogo {
-    background: url('/images/work-pogo.jpg') #2b59c3;
+    background: url('../images/work-pogo.jpg') #2b59c3;
   }
   
   &--whha {
-    background: url('/images/work-whha.jpg') #5786C0;
+    background: url('../images/work-whha.jpg') #5786C0;
     
     @include breakpoint(large-tablet-up) {
       grid-column: 12 / span 7;
@@ -182,15 +182,15 @@ $desktop-rows : 20;
   }
   
   &--shop {
-    background: url('/images/work-shop.jpg') #f1acba;
+    background: url('../images/work-shop.jpg') #f1acba;
   }
   
   &--craig {
-    background: url('/images/work-craig.jpg') #00a9e0;
+    background: url('../images/work-craig.jpg') #00a9e0;
   }
   
   &--bethesda {
-    background: url('/images/work-bethesda.jpg') #3b4ab8;
+    background: url('../images/work-bethesda.jpg') #3b4ab8;
     
     @include breakpoint(large-tablet-up) {
       grid-column: 12 / span 9;
@@ -198,7 +198,7 @@ $desktop-rows : 20;
   }
   
   &--tnc {
-    background: url('/images/work-tnc.jpg') #613e86;
+    background: url('../images/work-tnc.jpg') #613e86;
     
     @include breakpoint(large-tablet-up) {
       grid-column: 12 / span 10;
@@ -206,7 +206,7 @@ $desktop-rows : 20;
   }
   
   &--optify {
-    background: url('/images/work-optify.jpg') #2b59c3;
+    background: url('../images/work-optify.jpg') #2b59c3;
   }
 }
 
