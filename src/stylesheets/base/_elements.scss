@@ -1,5 +1,9 @@
 body {
   background: #b6b6b6;
+  
+  &.active {
+    overflow: hidden;
+  }
 }
 
 img {
