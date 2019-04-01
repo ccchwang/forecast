@@ -39,21 +39,3 @@
   line-height: 1.6;
   margin: 1.5rem 0 2rem;
 }
-
-.work-btn {
-  @include Rubik;
-  @include smooth;
-  background: #fff;
-  border-radius: 30px;
-  color: #111;
-  cursor: initial;
-  letter-spacing: 0.1em;
-  margin: 0.25em 0;
-  padding: 0.5em 1.25em;
-  text-transform: uppercase;
-  
-  @include breakpoint(large-tablet-up) {
-    background: #6e5e78;
-    color: #c3f776;
-  }
-}

@@ -1,10 +1,11 @@
-@keyframes slideDown {
-  95% {
-    transform: translateY(var(--down)) $initial-transform;
+@keyframes hideInactive {
+  30% {
+    opacity: 0;
   }
-
+  
   100% {
-    transform: translateY(var(--down)) rotateX(-1.8deg) scale(0);
+    opacity: 0;
+    transform: scale(0);
   }
 }
 
@@ -20,7 +21,6 @@
 
 .panel {
   --slide-active : #{$anim-dur} slideActive none;
-  --slide-down   : #{$anim-dur} slideDown forwards;
   background: #fff;
   box-shadow: $box-shadow;
   cursor: pointer;
@@ -36,38 +36,40 @@
     transition-duration: $anim-dur / 1.75;
   }
 
+  .active &:not(.-active) {
+    animation: hideInactive $anim-dur forwards;
+  }
+
   &.-active {
     cursor: auto;
     transform: translateY(var(--up));
+  }
+
+  @supports (-webkit-backdrop-filter: initial) { // for Safari  
+    @keyframes hideInactive {
+      0% {
+        opacity: 0;
+        transform: scale(0);
+      }
+      100% {
+        opacity: 0;
+        transform: scale(0);
+      }
+    }
+  
+    .active &:not(.-active) {
+      transform: $initial-transform;
+      transition-duration: 0s;
+    }
   }
 }
 
 @for $i from 0 through 4 {
   .panel-#{$i} {
     --up    : calc((100px * #{-$i}));
-    --down  : calc(100vh - #{$header-height} - (100px * #{$i}));
     top     : calc((#{$header-height} + (100px * #{$i})));
     z-index : $i;
   }
-}
-
-@supports (-webkit-backdrop-filter: initial) { // for Safari  
-  @keyframes hideSafari {
-    0% {
-      opacity: 0;
-      transform: scale(0);
-    }
-    100% {
-      opacity: 0;
-      transform: scale(0);
-    }
-  }
-
-  .-hide-safari {
-    animation: hideSafari 100ms forwards;
-    transform: $initial-transform;
-    transition-duration: 0s;
-  } 
 }
 
 .panel-0 {
@@ -90,12 +92,25 @@
   background: $red;
 }
 
+@keyframes allowPointer {
+  0% {
+    pointer-events: initial;
+  }
+  100% {
+    pointer-events: initial;
+  }
+}
+
 .panel-inner {
   height: 100%;
   overflow-x: hidden;
   pointer-events: none;
   
   .active & {
-    pointer-events: initial;
+    animation: allowPointer 10ms $anim-dur forwards;
+    
+    @supports (-webkit-backdrop-filter: initial) {
+      pointer-events: initial;
+    }
   }
 }

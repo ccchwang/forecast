@@ -1,0 +1,27 @@
+.text-center {
+  text-align: center;
+}
+
+.pill-btn {
+  @include Rubik;
+  @include smooth;
+  background: #fff;
+  border-radius: 30px;
+  color: #111;
+  cursor: initial;
+  letter-spacing: 0.1em;
+  margin: 0.25em 0;
+  padding: 0.5em 1.25em;
+  text-transform: uppercase;
+  
+  @include breakpoint(large-tablet-up) {
+    background: #6e5e78;
+    color: #c3f776;
+  }
+}
+
+.pill-btn--work {
+  background: #fff;
+  color: $red-link;
+  margin-top: 0.5rem;
+}

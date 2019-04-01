@@ -4,10 +4,8 @@
   padding: 1rem;
 }
 
-.lab-figure {
+.lab-item {
   margin: 2rem 0 2rem auto;
-  overflow: hidden;
-  position: relative;
   
   @include breakpoint(large-tablet-up) {
     max-width: 600px;
@@ -17,6 +15,11 @@
       margin-left: 0;
     }
   }
+}
+
+.lab-figure {
+  overflow: hidden;
+  position: relative;
   
   @media screen and (min-width: 500px) {
     &:hover {

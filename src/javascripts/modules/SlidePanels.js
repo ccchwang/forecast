@@ -70,9 +70,7 @@ export default class SlidePanels {
       }
     }
     else {
-      for (var i in this.map) {
-        this.map[i].style.removeProperty('animation')
-      }
+      this.map[this.currId].style.removeProperty('animation')
     }
 
     this.map[this.currId].classList.remove(this.activeClass)
@@ -91,7 +89,8 @@ export default class SlidePanels {
       this.map[newId].classList.remove('-hide-safari')
     }
     else {
-      this.setDirection(newId)
+      this.map[this.currId].style.removeProperty('animation')
+      this.map[newId].style.setProperty('animation', 'var(--slide-active)')
     }
 
     this.map[this.currId].classList.remove(this.activeClass)
@@ -114,15 +113,7 @@ export default class SlidePanels {
       }
     }
     else { 
-      this.setDirection(newId)
-    }
-  }
-  
-  setDirection(newId) {
-    for (let i = newId; i < this.panels.length; i++) {
-      let direction = parseInt(i) === newId ? 'active' : 'down'
-
-      this.map[i].style.setProperty('animation', `var(--slide-${direction})`)
+      this.map[newId].style.setProperty('animation', 'var(--slide-active)')
     }
   }
 

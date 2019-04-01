@@ -1,7 +1,7 @@
 $margin: 1.25rem;
 
 .about {
-  margin: 3rem auto;
+  margin: 3rem auto 1rem;
   padding: 2rem;
   
   @include breakpoint(large-tablet-up) {
@@ -25,7 +25,7 @@ $margin: 1.25rem;
 .about__me {
   border: 16px double #c3f776;
   flex-basis: 40%;
-  height: 450px;
+  height: 500px;
   position: relative;
 }
 
@@ -97,9 +97,21 @@ $margin: 1.25rem;
   line-height: 1.5;
   margin: $margin 0;
   overflow-y: auto;
-  padding: 1.5rem 1.7rem;
+  padding: 1.5rem 2rem;
+  
+  p {
+    margin-bottom: 1.25em;
+  }
+  
+  strong {
+    @include Rubik;
+    @include smooth;
+    background: #dac4ec;
+    color: #333;
+    letter-spacing: 0.025em;
+  }
   
   @include breakpoint(large-tablet-up) {
-    height: calc(450px - 160px - #{$margin});
+    height: calc(500px - 160px - #{$margin});
   }
 }
