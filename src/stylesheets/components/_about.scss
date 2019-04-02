@@ -1,4 +1,6 @@
-$margin: 1.25rem;
+$about-margin: 1.25rem;
+$about-img-height: 160px;
+$about-height: 500px;
 
 .about {
   margin: 3rem auto 1rem;
@@ -13,7 +15,7 @@ $margin: 1.25rem;
 .about--right {
   @include breakpoint(large-tablet-up) {
     flex-basis: 60%;
-    margin-left: $margin;
+    margin-left: $about-margin;
     order: 2;
   }
 }
@@ -25,7 +27,7 @@ $margin: 1.25rem;
 .about__me {
   border: 16px double #c3f776;
   flex-basis: 40%;
-  height: 500px;
+  height: $about-height;
   position: relative;
 }
 
@@ -42,8 +44,8 @@ $margin: 1.25rem;
   border-radius: 100%;
   border: 8px dotted $red;
   flex-shrink: 0;
-  height: 160px;
-  margin-right: $margin;
+  height: $about-img-height;
+  margin-right: $about-margin;
   width: 140px;
   
   @include breakpoint(large-tablet-up) {
@@ -80,6 +82,7 @@ $margin: 1.25rem;
   flex-basis: 100%;
   font-size: rem(22);
   letter-spacing: 0.05em;
+  padding-top: calc((#{$about-img-height} / 2) - 1em);
   text-shadow: 0.12em 0.12em #000;
   text-transform: uppercase;
   transition: color 0.2s, text-shadow 0.2s;
@@ -100,7 +103,7 @@ $margin: 1.25rem;
   border: 13px ridge yellow;
   height: 400px;
   line-height: 1.6;
-  margin: $margin 0;
+  margin: $about-margin 0;
   overflow-x: hidden;
   overflow-y: auto;
   padding: 1.75rem 2rem;
@@ -117,6 +120,6 @@ $margin: 1.25rem;
   }
   
   @include breakpoint(large-tablet-up) {
-    height: calc(500px - 160px - #{$margin});
+    height: calc(#{$about-height} - #{$about-img-height} - #{$about-margin});
   }
 }
