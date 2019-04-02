@@ -67,16 +67,20 @@ $desktop-rows : 20;
   }
   
   &--contact {
-    &::after {
+    &::before {
       background: #f4805f;
       grid-column-start: 14;
       grid-row: 1 / span 10;
     }
     
-    &::before {
+    &::after {
       background: #ffa429;
-      grid-column: 2 / span 10;
-      grid-row: 3 / span 6;
+      grid-column: 1 / span 18;
+      grid-row: 3 / span 7;
+      
+      @include breakpoint(large-tablet-up) {
+        grid-column: 2 / span 8;
+      }
     }
   }
   

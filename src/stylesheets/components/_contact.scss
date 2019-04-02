@@ -1,6 +1,61 @@
-.contact-btns {
-  margin-top: 4rem;
+.contact-content {
+  padding: 4rem 1rem 3rem;
+  
+  @media screen and (min-width: 900px) {
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
+.contact-quotes {
+  @include Rubik;
+  @include smooth;
+  line-height: 1.6;
+  position: relative;
+  
+  &::before {
+    color: #f4805f;
+    content: "“";
+    font-family: "Times";
+    font-size: 15rem;
+    left: -0.5rem;
+    line-height: 0;
+    position: absolute;
+    top: 4rem;
+    z-index: -1;
+  }
+  
+  @media screen and (min-width: 900px) {
+    flex-basis: 670px;
+    order: 2;
+    
+    &::before {
+      left: -2.25rem;
+    }
+  }
+}
+
+.contact-quote {
+  font-size: 2rem;
+  font-style: italic;
+  font-weight: 300;
+  padding: 1rem;
+}
+
+.contact-attribution {
+  font-size: rem(14);
+  letter-spacing: 0.07em;
+  margin: 1.5rem;
   text-align: center;
+  text-transform: uppercase;
+}
+
+.contact-btns {
+  @media screen and (min-width: 900px) {
+    flex-basis: 550px;
+    margin-left: 2rem;
+  }
 }
 
 .contact-btn {
@@ -10,10 +65,6 @@
   font-size: rem(70);
   margin: 2rem 1rem;
   text-decoration: underline;
-  
-  @include breakpoint(large-tablet-up) {
-    margin: 2rem 100% 2rem 6rem;
-  }
   
   &:hover,
   &:focus {
