@@ -74,7 +74,7 @@ export default class SlidePanels {
     }
 
     this.map[this.currId].classList.remove(this.activeClass)
-    this.body.classList.remove('active', `active-${this.currId}`)
+    this.body.classList = ""
     this.currId = -1
   }
 
@@ -86,16 +86,26 @@ export default class SlidePanels {
     // set new active
     if (this.isSafari) {
       this.map[this.currId].classList.add('-hide-safari')
+      this.map[this.currId].classList.remove(this.activeClass)
+      
       this.map[newId].classList.remove('-hide-safari')
+      this.map[newId].classList.add(this.activeClass)
+      
+      this.currId = newId
     }
     else {
-      this.map[this.currId].style.removeProperty('animation')
-      this.map[newId].style.setProperty('animation', 'var(--slide-active)')
+      this.map[this.currId].style.setProperty('animation', 'var(--hide)')
+      this.map[newId].style.setProperty('animation', 'var(--slide-opened)')
+      this.map[newId].classList.add(this.activeClass)
+    
+      setTimeout(() => {
+        requestAnimationFrame(() => {
+          this.map[this.currId].classList.remove(this.activeClass)
+          this.map[this.currId].style.removeProperty('animation')
+          this.currId = newId
+        })
+      }, 600)
     }
-
-    this.map[this.currId].classList.remove(this.activeClass)
-    this.map[newId].classList.add(this.activeClass)
-    this.currId = newId
   }
   
   /***********************
@@ -113,7 +123,7 @@ export default class SlidePanels {
       }
     }
     else { 
-      this.map[newId].style.setProperty('animation', 'var(--slide-active)')
+      this.map[newId].style.setProperty('animation', 'var(--slide)')
     }
   }
 

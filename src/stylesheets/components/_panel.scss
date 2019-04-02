@@ -1,15 +1,16 @@
 @keyframes hideInactive {
-  30% {
-    opacity: 0;
+  95% {
+    opacity: 1;
+    transform: translateY(var(--down)) $initial-transform;
   }
   
   100% {
     opacity: 0;
-    transform: scale(0);
+    transform: translateY(var(--down)) scale(0);
   }
 }
 
-@keyframes slideActive {
+@keyframes slide {
   0% {
     transform: $initial-transform;
   }
@@ -19,8 +20,20 @@
   }
 }
 
+@keyframes slideOpened {
+  0% {
+    transform: translateY(var(--down)) $initial-transform;
+  }
+
+  100% {
+    transform: translateY(var(--up));
+  }
+}
+
 .panel {
-  --slide-active : #{$anim-dur} slideActive none;
+  --slide        : #{$anim-dur} slide none;
+  --slide-opened : #{$anim-dur} slideOpened none;
+  --hide         : #{$anim-dur} hideInactive forwards;
   background: #fff;
   box-shadow: $box-shadow;
   cursor: pointer;
@@ -67,6 +80,7 @@
 @for $i from 0 through 4 {
   .panel-#{$i} {
     --up    : calc((100px * #{-$i}));
+    --down  : calc(100vh - #{$header-height} - (100px * #{$i}));
     top     : calc((#{$header-height} + (100px * #{$i})));
     z-index : $i;
   }
