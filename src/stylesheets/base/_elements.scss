@@ -1,10 +1,8 @@
 body {
   background: #b6b6b6;
   
-  @supports (-webkit-backdrop-filter: initial) {
-    &.active {
-      overflow: hidden;
-    }
+  &.active {
+    overflow: hidden;
   }
 }
 

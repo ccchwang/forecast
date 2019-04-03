@@ -46,7 +46,9 @@ export default class SlidePanels {
   }
   
   onClickNav(newId) {
-    requestAnimationFrame(() => this.change(newId))
+    if (newId !== this.currId) {
+      requestAnimationFrame(() => this.change(newId))
+    }
   }
   
   /***********************
