@@ -1,0 +1,42 @@
+{% extends 'layouts/application.html' %}
+
+{% block content %}
+<header class="header">
+  <div class="hero">
+    <nav>
+      <ul class="nav">
+        <li><a href="/" class="nav__item">← Back</a></li>
+        <li><a href="Cho%20Hwang%20Resume%202019.pdf" class="nav__item" style="margin: 0 0.75rem;">2020 Forecast</a></li>
+        <li><a class="nav__item link-active">About</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="main">
+  <section>
+    <h1 class="about-title">About</h1>
+    <div class="about-pics-container">
+      <div class="about-pics about-pics1">
+        <div class="img-me">
+          <img
+            alt=""
+            class="img-me__inner"
+            src="images/me.jpg"
+            srcset="images/me.jpg 1x, images/about-mona2x.jpg 2x"
+          >
+        </div>
+        <div class="img-sky"></div>
+      </div>
+      <div class="about-pics">
+        <div class="img-sky2"></div>
+        <div class="about-pics-inner">
+          <div class="img-small"></div>
+          <div class="img-small2"></div>
+        </div>
+      </div>
+    </div>
+    <p class="about-text">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+  </section>
+</main>
+{% endblock %}

@@ -3,28 +3,16 @@
   display: flex;
   height: $header-height;
   justify-content: space-between;
-  overflow-y: hidden;
+  padding: 0 0.5rem;
 }
 
 .nav__item {
-  font-size: inherit;
-  letter-spacing: inherit;
-  text-transform: inherit;
-
   &:hover,
-  &:focus {
+  &:focus,
+  &.link-active {
+    @include smooth;
     color: $red-link;
+    font-weight: 700;
     text-decoration: underline;
-  }
-}
-
-@for $i from 0 through 4 {
-  .link-#{$i} {
-    .active-#{$i} & {
-      @include smooth;
-      color: $red-link;
-      font-weight: 700;
-      text-decoration: underline;
-    }
   }
 }
