@@ -5,6 +5,7 @@ $logo: #796dff;
 $border-color: #513e5d;
 
 body {
+  @include Roboto;
   background: $lav;
 }
 
