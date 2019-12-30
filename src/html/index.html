@@ -3,8 +3,6 @@
 {% block content %}
 <header class="header">
   <div class="hero">
-    <h1 class="sr-only">Cho Hwang | Frontend Developer</h1>
-
     <div class="marquee-container" aria-hidden="true">
       <p class="marquee">
         <span>The Astro Forecast</span>
@@ -61,7 +59,14 @@
     srcset="images/logo1x.png 1x, images/logo2x.png 2x"
     alt=""
   >
-  <a href="Cho%20Hwang%20Resume%202019.pdf" class="link link1" rel="noopener noreferrer">2020 Forecast</a>
-  <a href="/about.html" class="link link2">About Me</a>
+  <div class="link-container link-container1">
+    <a class="link link1" rel="noopener noreferrer">2020 Forecast</a>
+    <div class="link-shadow link-shadow1"></div>
+    <div class="coming-soon">COMING<br>JAN 2020</div>
+  </div>
+  <div class="link-container">
+    <a href="/about.html" class="link link2">About Me</a>
+    <div class="link-shadow link-shadow2"></div>
+  </div>
 </main>
 {% endblock %}
