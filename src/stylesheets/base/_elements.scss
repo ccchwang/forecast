@@ -29,7 +29,7 @@ body {
   max-width: 25rem;
 
   &:hover {
-    .link2 {
+    .link {
       transform: translate(2px, 2px)
     }
   }
@@ -71,7 +71,7 @@ body {
 .coming-soon {
   @include smooth;
   position: absolute;
-  top: -1rem;
+  top: -0.8rem;
   right: -1.1rem;
   background: white;
   padding: 0.4em 0.75em 0.5em;
