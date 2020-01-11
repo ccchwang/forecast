@@ -1,0 +1,52 @@
+{% set purples = [
+  {'hex': '#d8c9db'},
+  {'hex': '#c4b2c7'},
+  {'hex': '#97839b'},
+  {'hex': '#6f5f79'},
+  {'hex': '#625070'}
+] %}
+
+<div style="display: flex;flex-wrap: wrap;">
+  {% for purple in purples %}
+    <div style="border: 1px solid #333; margin: 0.5rem;">
+      <div style="background-color: {{ purple.hex }}; width: 100px; height: 100px;">
+      </div>
+      <p style="padding: 0.5rem; margin: 0">{{ purple.hex }}</p>
+    </div>
+  {% endfor %}
+</div>
+
+{% set purples2 = [
+  {'hex': '#8a6a9f'},
+  {'hex': '#5f4670'},
+  {'hex': '#513e5d'},
+  {'hex': '#4d3d57'},
+  {'hex': '#796dff'}
+] %}
+
+<div style="display: flex;flex-wrap: wrap;">
+  {% for purple in purples2 %}
+    <div style="border: 1px solid #333; margin: 0.5rem;">
+      <div style="background-color: {{ purple.hex }}; width: 100px; height: 100px;">
+      </div>
+      <p style="padding: 0.5rem; margin: 0">{{ purple.hex }}</p>
+    </div>
+  {% endfor %}
+</div>
+
+{% set greens = [
+  {'hex': '#e3efca'},
+  {'hex': '#eaffc5'},
+  {'hex': '#e1ff8c'},
+  {'hex': '#c3f776'}
+] %}
+
+<div style="display: flex;flex-wrap: wrap;">
+  {% for green in greens %}
+    <div style="border: 1px solid #333; margin: 0.5rem;">
+      <div style="background-color: {{ green.hex }}; width: 100px; height: 100px;">
+      </div>
+      <p style="padding: 0.5rem; margin: 0">{{ green.hex }}</p>
+    </div>
+  {% endfor %}
+</div>
