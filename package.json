@@ -9,6 +9,7 @@
     "blendid": "^4.4.3"
   },
   "scripts": {
-    "start": "yarn run blendid"
+    "start": "yarn run blendid",
+    "build": "yarn run blendid build"
   }
 }

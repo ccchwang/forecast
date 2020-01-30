@@ -1,0 +1,53 @@
+.forecast-nav {
+  position: absolute;
+
+  @media screen and (max-width: 700px) {
+    display: none;
+  }
+}
+
+.forecast-header {
+  text-align: center;
+  padding: calc((#{$header-height} - #{rem(15)})/2);
+}
+
+.forecast-title {
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.forecast-selector {
+  -webkit-appearance: none;
+  border-radius: 0;
+  outline: none;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1.25rem;
+  font-style: italic;
+  background: #fff;
+  padding: 0.5rem 0.75rem;
+}
+
+.forecast-text {
+  margin: 0 auto;
+
+  p {
+    margin-bottom: 1rem;
+  }
+}
+
+.forecast-main {
+  margin-top: rem(96);
+  position: relative;
+}
+
+.forecast-signs {
+  display: none;
+  position: absolute;
+  top: 2.25rem;
+  left: 1.5rem;
+  right: 1.5rem;
+
+  &.show {
+    display: block;
+  }
+}
