@@ -34,7 +34,7 @@
 
 .forecast-main {
   margin-top: rem(96);
-  padding: 2rem 1.5rem;
+  padding: 2rem 1.25rem;
 }
 
 .forecast-signs {
@@ -50,7 +50,7 @@
   margin-bottom: 1.75rem;
   padding: 1rem;
   font-size: 0.85rem;
-  line-height: 1.3;
+  line-height: 1.35;
 }
 
 .forecast-highlight {
@@ -67,8 +67,17 @@
   letter-spacing: 0.05em;
 }
 
-.forecast-text {
-  line-height: 1.4;
+.forecast-text,
+.forecast-quote {
   font-family: Georgia;
   font-size: 1rem;
+}
+
+.forecast-text {
+  line-height: 1.4;
+
+  &:first-letter {
+    font-size: 55px;
+    padding-right: 6px;
+  }
 }

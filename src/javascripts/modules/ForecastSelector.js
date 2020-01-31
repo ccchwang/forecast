@@ -20,7 +20,6 @@ export default class ForecastSelector {
 
       if (sign === this.currentlyShownSign) {
         this.currentlyShownElement = forecast;
-        this.currentlyShownElement.classList.add('show');
       }
     })
   }
@@ -35,6 +34,8 @@ export default class ForecastSelector {
         this.currentlyShownSign = newValue;
         this.currentlyShownElement = this.forecastsMap[newValue];
         this.currentlyShownElement.classList.add('show');
+
+        window.scrollTo(0,0);
       }
     })
   }
