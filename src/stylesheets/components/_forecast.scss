@@ -1,7 +1,7 @@
 .forecast-nav {
   position: absolute;
 
-  @media screen and (max-width: 700px) {
+  @media screen and (max-width: 500px) {
     display: none;
   }
 }
@@ -17,37 +17,58 @@
 }
 
 .forecast-selector {
+  background-image: url('../../images/down-arrow.png');
+  background-size: 0.8rem;
+  background-repeat: no-repeat;
+  background-position: 92%;
+  background-color: #fff;
   -webkit-appearance: none;
+  border: 2px solid #000;
   border-radius: 0;
   outline: none;
   font-family: 'Roboto Mono', monospace;
   font-size: 1.25rem;
   font-style: italic;
-  background: #fff;
-  padding: 0.5rem 0.75rem;
-}
-
-.forecast-text {
-  margin: 0 auto;
-
-  p {
-    margin-bottom: 1rem;
-  }
+  padding: 0.5rem 2.45rem 0.5rem 0.75rem;
 }
 
 .forecast-main {
   margin-top: rem(96);
-  position: relative;
+  padding: 2rem 1.5rem;
 }
 
 .forecast-signs {
   display: none;
-  position: absolute;
-  top: 2.25rem;
-  left: 1.5rem;
-  right: 1.5rem;
 
   &.show {
     display: block;
   }
+}
+
+.forecast-highlights {
+  background: #eaffc5;
+  margin-bottom: 1.75rem;
+  padding: 1rem;
+  font-size: 0.85rem;
+  line-height: 1.3;
+}
+
+.forecast-highlight {
+  width: fit-content;
+  margin: auto;
+}
+
+.forecast-highlights-title {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #8a6a9f;
+  text-align: center;
+  margin-bottom: 0.5em;
+  letter-spacing: 0.05em;
+}
+
+.forecast-text {
+  line-height: 1.4;
+  font-family: Georgia;
+  font-size: 1rem;
 }

@@ -10,7 +10,7 @@
   @include Roboto;
   color: #533d60;
   text-align: right;
-  padding: 2rem 0;
+  padding: 1rem 0 2rem;
 }
 
 .about-contact,
@@ -18,12 +18,19 @@
   font-size: 0.9rem;
 }
 
+.about-text-container {
+  max-width: 500px;
+  margin: auto;
+}
+
 .about-text {
-  margin-top: 2rem;
   line-height: 1.35;
   font-family: helvetica;
   font-size: 0.95rem;
-  max-width: 500px;
+
+  p {
+    margin-bottom: 1rem;
+  }
 
   &:first-letter,
   .first {
@@ -41,7 +48,6 @@
 
 .about-highlight {
   @include Roboto;
-  display: block;
   font-style: italic;
   max-width: 90%;
   margin: auto;
