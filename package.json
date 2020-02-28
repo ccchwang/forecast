@@ -6,7 +6,8 @@
   "author": "Cho Hwang",
   "license": "MIT",
   "dependencies": {
-    "blendid": "^4.4.3"
+    "blendid": "^4.4.3",
+    "siema": "^1.5.1"
   },
   "scripts": {
     "start": "yarn run blendid",

@@ -1,3 +1,5 @@
 # Don't allow web crawlers to index parts kit
 User-agent: *
 Disallow: /colorsofthewind.html
+Disallow: /thanks.html
+

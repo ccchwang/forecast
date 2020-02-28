@@ -18,6 +18,20 @@
 // @import "components/work";
 // @import "components/lab";
 // @import "components/musings";
-@import "components/about";
-@import "components/forecast";
-// @import "components/contact";
+// @import "components/about";
+// @import "components/forecast";
+@import "components/signup";
+// @import "components/thanks";
+// @import "components/carousel";
+
+.img-small {
+  background: url("../images/nature.jpg");
+}
+
+.img-small2 {
+  background: url("../images/space.jpg");
+}
+
+.forecast-selector {
+  background-image: url('../../images/down-arrow.png');
+}

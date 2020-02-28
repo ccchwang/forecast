@@ -1,0 +1,92 @@
+// Mailchimp Styles
+
+#mc_embed_signup {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+#mc_embed_signup_scroll {
+  @media screen and (min-width: 400px) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: -0.75rem;
+
+    .mc-field-group,
+    .mailchimp-subscribe {
+      flex-basis: 48%;
+    }
+
+    .mailchimp-subscribe {
+      position: relative;
+    }
+  }
+
+  @media screen and (min-width: 700px) {
+    .mc-field-group,
+    .mailchimp-subscribe {
+      flex-basis: 24%;
+    }
+  }
+}
+
+.mailchimp-title {
+  @include smooth;
+  font-family: Helvetica, Arial, sans-serif;
+  text-align: center;
+  line-height: 1.35;
+  margin-bottom: 1.25rem;
+  font-size: 1.25rem;
+}
+
+.mailchimp-label {
+  display: block;
+  margin: 0.9rem 0 0.35rem;
+  font-size: 0.7rem;
+}
+
+.mailchimp-input,
+.mailchimp-select {
+  width: 100%;
+  outline: none;
+  border: 2px solid #000;
+  min-height: 2rem;
+  padding: 0 0.45em;
+  font-size: 0.85rem;
+}
+
+.mailchimp-select {
+  appearance: none;
+  border-radius: 0;
+  background-image: url('../../images/down-arrow.png');
+  background-size: 0.7rem;
+  background-repeat: no-repeat;
+  background-position: 96%;
+  padding-right: 1.35rem;
+}
+
+#mc-embedded-subscribe {
+  @include Roboto;
+  @include smooth;
+  margin-top: 1rem;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+
+  @media screen and (min-width: 400px) {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+
+  @media screen and (max-width: 699px) {
+    min-height: 2.25rem;
+  }
+}
+
+.mailchimp-label,
+#mc-embedded-subscribe {
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 0.075em;
+}

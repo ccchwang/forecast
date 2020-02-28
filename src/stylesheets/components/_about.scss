@@ -18,20 +18,7 @@
   font-size: 0.9rem;
 }
 
-.about-text-container {
-  max-width: 500px;
-  margin: auto;
-}
-
-.about-text {
-  line-height: 1.35;
-  font-family: helvetica;
-  font-size: 0.95rem;
-
-  p {
-    margin-bottom: 1rem;
-  }
-
+.about-text {    
   &:first-letter,
   .first {
     font-weight: bold;

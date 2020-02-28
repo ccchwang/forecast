@@ -1,0 +1,91 @@
+.carousel-container {
+  position: relative;
+  width: calc(100vw - 1.25rem);
+  max-width: 350px;
+}
+
+.siema {
+  margin: 0 auto;
+  padding-top: 15%;
+  width: 73%;
+
+  img {
+    width: 100%;
+  }
+}
+
+.carousel-frame {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+.carousel-title {
+  margin-top: 2.75rem;
+  font-size: 1.4rem;
+  color: #8f479a;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1.2;
+}
+
+@keyframes blink {
+  from { opacity: 1.0; }
+  to { opacity: 0.0; }
+}
+
+.carousel-anim {
+  animation: blink 1.1s ease-in-out infinite;
+}
+
+.carousel-signup {
+  max-width: 375px;
+  margin-top: -0.5rem;
+  width: 100%;
+
+  #mc_embed_signup_scroll {
+    display: block;
+    margin-top: unset;
+  }
+
+  #mc-embedded-subscribe {
+    position: initial;
+    background: #8f479a;
+  }
+}
+
+.carousel-text {
+  margin: 1rem 0; 
+  line-height: 1.4;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.carousel-buttons {
+  text-align: center;
+  margin-top: -1px;
+}
+
+.carousel-prev,
+.carousel-next {
+  outline: none;
+  background: none;
+  color: #eaffc5;
+  border: none;
+  cursor: pointer;
+  letter-spacing: 0.04em;
+  @include smooth;
+  @include Roboto;
+  font-weight: bold;
+  padding: 0.25rem 0.5rem;
+}
+
+.carousel-prev {
+  margin-right: 0.75rem;
+}
+
+.carousel-stars {
+  color: #eaffc5;
+  text-align: center;
+  margin-top: 0.75rem;
+}

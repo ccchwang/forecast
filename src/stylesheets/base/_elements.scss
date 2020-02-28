@@ -85,10 +85,28 @@ body {
   background: $lime;
 }
 
+.link2 {
+  background: pink;
+  color: $logo;
+}
+
+.link-shadow2 {
+  background: $logo;
+}
+
+.link3 {
+  color: #ea66f3;
+  background: #eaffc5;
+}
+
+.link-shadow3 {
+  background: #fea2ff;
+}
+
 .coming-soon {
   @include smooth;
   position: absolute;
-  top: -0.8rem;
+  top: -0.7rem;
   right: -1.1rem;
   background: white;
   padding: 0.4em 0.75em 0.5em;
@@ -101,11 +119,17 @@ body {
   border: 3px solid $border-color;
 }
 
-.link2 {
-  background: pink;
-  color: $logo;
+.paragraph-text-container {
+  max-width: 500px;
+  margin: auto;
 }
 
-.link-shadow2 {
-  background: $logo;
+.paragraph-text {
+  line-height: 1.35;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 0.95rem;
+
+  p {
+    margin-bottom: 1rem;
+  }
 }
