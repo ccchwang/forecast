@@ -53,12 +53,12 @@
   min-height: 2rem;
   padding: 0 0.45em;
   font-size: 0.85rem;
+  border-radius: 0;
 }
 
 .mailchimp-select {
   appearance: none;
-  border-radius: 0;
-  background-image: url('../../images/down-arrow.png');
+  background: url('../../images/down-arrow.png') #fff;
   background-size: 0.7rem;
   background-repeat: no-repeat;
   background-position: 96%;
@@ -70,6 +70,8 @@
   @include smooth;
   margin-top: 1rem;
   background: #000;
+  appearance: none;
+  border-radius: 0;
   color: #fff;
   cursor: pointer;
 
