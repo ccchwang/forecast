@@ -9,7 +9,7 @@ export default class Carousel {
     });
 
     // play on autoloop
-    let autoloop = setInterval(() => Carousel.next(), 2000);
+    let autoloop = setInterval(() => Carousel.next(), 1700);
 
     // add click handlers to buttons
     el.querySelector('.carousel-prev')
