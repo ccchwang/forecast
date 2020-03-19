@@ -90,7 +90,8 @@ body {
   color: $logo;
 }
 
-.link-shadow2 {
+.link-shadow2,
+.link-shadow4 {
   background: $logo;
 }
 
@@ -101,6 +102,11 @@ body {
 
 .link-shadow3 {
   background: #fea2ff;
+}
+
+.link4 {
+  background: url('../images/gold-bg.jpg');
+  background-size: contain;
 }
 
 .coming-soon {
