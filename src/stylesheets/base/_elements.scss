@@ -105,8 +105,17 @@ body {
 }
 
 .link4 {
-  background: url('../images/gold-bg.jpg');
+  background: url('../images/gold-bg.jpg') goldenrod;
   background-size: contain;
+}
+
+.link5 {
+  background: url('../images/silver-bg.jpg') #d8d8d8;
+  background-size: contain;
+}
+
+.link-shadow5 {
+  background: #ffde8f;
 }
 
 .coming-soon {
