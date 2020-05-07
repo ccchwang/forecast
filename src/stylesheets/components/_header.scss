@@ -1,11 +1,15 @@
+.header-container {
+  overflow-x: hidden;  
+  z-index: 100;
+  position: sticky;
+  top: 0;
+}
+
 .header {
   background: #fff;
   border: $border;
   border-width: 2px 0;
   width: 100%;
-  // z-index: 100;
-  // position: sticky;
-  // top: 0;
 }
 
 .hero {
