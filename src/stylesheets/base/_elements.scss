@@ -7,10 +7,11 @@ $border-color: #513e5d;
 body {
   @include Roboto;
   background: $lav;
+  overflow-x: hidden;
 }
 
 .main {
-  margin-top: $header-height + 5px;
+  // margin-top: $header-height + 5px;
   padding: 2.25rem 1.5rem;
   display: flex;
   flex-direction: column;

@@ -1,8 +1,12 @@
-{% if mailchimpTitle %}
-  <p class="mailchimp-title">{{ mailchimpTitle }}</p>
-{% endif %}
+<div class="mailchimp-wrapper">
+  {% if mailchimpTitle %}
+    <p class="mailchimp-title">{{ mailchimpTitle }}</p>
+  {% endif %}
 
-<a href="http://eepurl.com/gTMshz" class="free-download">SUBSCRIBE</a>
+  <a href="http://eepurl.com/gTMshz" class="free-download">SUBSCRIBE</a>
+
+  <button class="mailchimp-close" id="mailchimp-close" aria-label="Close signup popup">+</button>
+</div>
 
 <!-- Begin Mailchimp Signup Form -->
 {# <div id="mc_embed_signup">

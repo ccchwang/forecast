@@ -1,6 +1,11 @@
 {% extends 'layouts/application.html' %}
 
 {% block content %}
+<section class="forecast-signup" data-module="SignupClose">
+  {% set mailchimpTitle = "Get weekly updates on the planetary weather + how they'll affect you!" %}
+  {% include "signup.html" %}
+</section>
+
   {% include "marquee-header.html" %}
 
   <main class="main">
@@ -42,4 +47,8 @@
       <div class="link-shadow link-shadow2"></div>
     </div>
   </main>
+{% endblock %}
+
+{% block javascript %}
+  <script src="javascripts/app.js"></script>
 {% endblock %}
