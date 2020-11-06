@@ -1,0 +1,86 @@
+{% extends 'layouts/application.html' %}
+
+{% block styles %}
+  <style>
+    .work-with-me{margin:0 auto}@media screen and (min-width: 600px){.work-with-me{max-width:525px}}.work-with-me .purple-link-container{margin:1.2rem auto 4rem;max-width:11.25rem}.offering-title{font-size:1.25rem;margin-top:1.75rem}.offering-subtitle{font-size:0.81rem;margin-top:0.3rem;text-align:center;color:#8f479a}.offering-list{padding-left:1.35rem}.offering-bullet::before{content:'✦';font-size:1rem;margin-left:-1.35rem;margin-right:0.35rem}.offering-img{width:100%;border-radius:20px;max-width:500px;margin-top:1rem}.offering-sample-link{display:inline-block;color:#8f479a}.mt-1{margin-top:1rem}
+  </style>
+{% endblock %}
+
+{% block content %}
+<header class="header">
+  <div class="hero">
+    <nav>
+      <ul class="nav">
+        <li><a href="/" class="nav__item">← Back</a></li>
+        <li><a class="nav__item link-active">Work With Me</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main style="padding: 2.25rem 1rem;">
+  <h1 class="about-title">Work With Me</h1>
+
+  <section class="work-with-me">
+    <div>
+      <div style="text-align: center;">
+        <img alt="" class="offering-img"
+          src="images/offering-session-1x.jpg"
+          srcset="images/offering-session-1x.jpg 1x, images/offering-session-2x.jpg 2x"
+        >
+      </div>
+
+      <h2 class="carousel-title offering-title">Self-Discovery Session</h2>
+      <p class="offering-subtitle"><em>Private, one-on-one reading</em></p>
+      <p class="offering-subtitle"><em>$155</em></p>
+      <div class="carousel-text">
+        <p>Unlock the secrets of your unique astrology chart and discover the power of YOU. In this 60-minute session, we will dive deep into your chart and explore your inner workings, overall life journey, and untapped potential. Each session ends with a forecast of the year ahead for you!</p>
+        <p class="mt-1">What you get:</p>
+        <ul class="offering-list">
+          <li class="offering-bullet">60-minute private video session</li>
+          <li class="offering-bullet">Beautifully-designed PDF presentation</li>
+          <li class="offering-bullet">Recording of the session</li>
+        </ul>      
+      </div>
+      <div class="purple-link-container link-container">
+        <a href="https://app.acuityscheduling.com/schedule.php?owner=19230383&appointmentType=13451612" class="purple-link link">BOOK NOW</a>
+        <div class="purple-link-shadow link-shadow"></div>
+      </div>
+    </div>
+    <div>
+      <div style="text-align: center;">
+        <img alt="" class="offering-img" style="max-width: 400px;"
+          src="images/offering-report-1x.png"
+          srcset="images/offering-report-1x.png 1x, images/offering-report-2x.jpg 2x"
+        >
+      </div>
+
+      <h2 class="carousel-title offering-title">Cosmic Mind Map Report</h2>
+      <p class="offering-subtitle"><em>Custom PDF report</em></p>
+      <p class="offering-subtitle"><em>$55</em></p>
+      <div class="carousel-text">
+        <p>What if life came with a user’s manual on how to be your best & brightest self? You would know exactly what you’re good at, what you need to work on, and what makes you shine. Using your unique birth chart, the <span style="font-weight: 600;">Cosmic Mind Map</span> will help you understand who you were born to be!</p>
+        <a href="s" class="offering-sample-link mt-1" target="_blank" rel="noreferrer noopener">
+          >> Preview a FULL sample report!
+        </a>
+        <p class="mt-1">Your mind map will help you learn…</p>
+        <ul class="offering-list">
+          <li class="offering-bullet">What you’re naturally good at</li>
+          <li class="offering-bullet">What you need to be truly happy</li>
+          <li class="offering-bullet">Tips for your best self-care</li>
+          <li class="offering-bullet">Areas of life where you shine</li>
+          <li class="offering-bullet">What makes you unique & special!</li>
+        </ul>  
+        <p class="mt-1">What you get:</p>
+        <ul class="offering-list">
+          <li class="offering-bullet">A custom PDF report, delivered on your scheduled date</li>
+        </ul>      
+      </div>
+      <div class="purple-link-container link-container">
+        <a href="https://app.acuityscheduling.com/schedule.php?owner=19230383&appointmentType=18165122" class="purple-link link">ORDER NOW</a>
+        <div class="purple-link-shadow link-shadow"></div>
+      </div>
+    </div>
+  </section>
+  </main>
+{% endblock %}
