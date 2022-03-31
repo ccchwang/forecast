@@ -128,8 +128,10 @@ body {
 }
 
 .link-two-line {
-  line-height: 1.15;
-  padding: 1.5rem 1.75rem;
+  @media screen and (max-width: 440px) {
+    line-height: 1.06;
+    padding: 1.5rem 1.75rem;
+  }
 }
 
 .coming-soon {
