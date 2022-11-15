@@ -1,105 +1,77 @@
-.blog-listing__title {
-  font-size: 25px;
-  font-weight: normal;
-  margin-bottom: 10px !important;
+/*
+  media query breakpoints loosely modeled after material design breakpoints
+  https://material.io/guidelines/layout/responsive-ui.html#responsive-ui-breakpoints
+  0          360          400         600         720         840          960         1280         ...
+  | sm mobile | med mobile | lg mobile | sm tablet | lg tablet | sm desktop | md desktop | lg desktop |
+  =====================================================================================================
+*/
+
+$breakpoints : (
+  // small-mobile-down            : 'max-width: 359px',
+  // medium-mobile-up             : 'min-width: 360px',
+  // medium-mobile-down           : 'max-width: 399px',
+  // large-mobile-up              : 'min-width: 400px',
+  // large-plus-mobile-down       : 'max-width: 499px',
+  // large-plus-mobile-up         : 'min-width: 500px',
+  // large-mobile-down            : 'max-width: 599px',
+  // small-tablet-up              : 'min-width: 600px',
+  small-tablet-down            : 'max-width: 719px',
+  large-tablet-up              : 'min-width: 720px',
+  // large-tablet-down            : 'max-width: 839px',
+  small-desktop-up             : 'min-width: 840px',
+  // small-desktop-down           : 'max-width: 959px',
+  // medium-desktop-up            : 'min-width: 960px',
+  // medium-plus-desktop-down     : 'max-width: 1119px',
+  // medium-plus-desktop-up       : 'min-width: 1120px',
+  // medium-desktop-down          : 'max-width: 1279px',
+  // large-desktop-up             : 'min-width: 1280px',
+  // extra-large-desktop-up       : 'min-width: 1385px',
+  // landscape-small-mobile-down  : 'max-width: 599px',
+  // landscape-medium-mobile-up   : 'min-width: 600px',
+  // landscape-medium-mobile-down : 'max-width: 719px',
+  // landscape-large-mobile-up    : 'min-width: 720px',
+  // landscape-large-mobile-down  : 'max-width: 959px',
+  // landscape-small-tablet-up    : 'min-width: 960px',
+  // landscape-small-tablet-down  : 'max-width: 1023px',
+  // landscape-large-tablet-up    : 'min-width: 1024px',
+  // landscape-large-tablet-down  : 'max-width: 1279px',
+);
+
+// Functions
+@function bp($key) {
+  @if map-has-key($breakpoints, $key) {
+    @return map-get($breakpoints, $key);
+  }
+
+  @warn "Unkown '#{$key}' in $breakpoints.";
+  @return null;
 }
 
-.tag {
-  padding: 6px 9px;
-  border-radius: 0px;
-  text-transform: uppercase;
-  letter-spacing: 0.05rem;
+// Mixins
+@mixin breakpoint($expression) {
+  @if (str-index($expression, 'landscape')) {
+    @media (bp($expression)) and (orientation: landscape) {
+      @content;
+    }
+  } @else if (str-index($expression, '-up')) {
+    // allow this breakpoint to be applied to print
+    @media print, (bp($expression)) {
+      @content;
+    }
+  } @else if (str-index($expression, 'small-tablet-down')) {
+    // prevent this breakpoint from being applied to print
+    @media screen and (bp($expression)) {
+      @content;
+    }
+  } @else {
+    @media (bp($expression)) {
+      @content;
+    }
+  }
 }
 
-.sidebar__panel {
-  padding: 15px;
+@mixin range($start, $end) {
+  @media (bp($start)) and (bp($end)) {
+    @content;
+  }
 }
-
-.blog-listing__media > a > img {
-  height: 100%;
-}
-
-.blog-post-body__title {
-  font-size: 50px;
-}
-
-.blog-post-body__media {
-  max-height: 200px;
-  overflow: hidden;
-}
-
-.blog-post-body__panel {
-  padding: 0;
-  overflow: hidden;
-}
-
-.blog-post-body__info {
-  padding: 15px 30px;
-}
-
-.blog-post-body__content {
-  padding: 0 30px 30px;
-}
-
-.blog-post-body .col-lg-9 {
-  max-width: 60%;
-}
-
-.blog-post-body .row {
-  justify-content: center;
-}
-
-.link-list__links,
-.link-list__title {
-  font-size: 15px;
-  font-style: italic;
-}
-
-/* This creates bigger spacing between the main navigation menu items */
-
-.header__content--desktop .link-list__link {
-  margin-left: 20px !important;
-  margin-right: 20px !important;
-}
-
-/* This underlines the main navigation menu items when hovering over them */
-
-.header a.link-list__link:hover {
-  text-decoration: underline !important;
-}
-
-/* Header links */
-
-.header__content {
-  text-transform: uppercase;
-  font-weight: bold;
-  letter-spacing: 0.5px;
-}
-
-.header__content--desktop {
-  padding: 10px 0;
-}
-
-
-/* Heading stars */
-
-.CH--heading::before{content:'';position:absolute;z-index:-1;width:10rem;height:1.2rem;background:#d3b0fc;left:0;bottom:0.1rem;right:0;margin:0 auto}
-
-.CH--heading-shop::before{width:11rem;background:url("https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/site/2147500476/products/woPjJ7eQRJqHUrzSDcEv_Untitled_design_3_.png");background-size:cover}
-
-@media only screen and (min-width: 768px){
-  .CH--heading::before{width:15rem;height:1.5rem}
-  .CH--heading-shop::before{width:17rem}
-  .CH--left-star{left:-3rem !important;width:36px !important}
-  .CH--right-star{bottom:-2rem !important;right:-3.75rem !important;width:50px !important}
-  .card__title,.product__title{min-height:3.15rem}
-}
-
-.product > a:hover{filter: none}
-
-// .product__image{overflow:hidden}
-
-// .product__image > img{transition:0.2s ease-out}
-
-// .product__image > img:hover{transform:scale(1.05)}
-
