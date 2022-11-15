@@ -1,60 +1,132 @@
-// @import "setup/breakpoints";
-@import "setup/reset";
-@import "setup/typography";
-@import "setup/variables";
-@import "setup/mixins";
-@import "setup/functions";
 
-@import "base/elements";
-// @import "base/typography";
 
-// @import "components/utility";
-@import "components/header";
-@import "components/marquee";
-// @import "components/panel";
-@import "components/nav";
-// @import "components/title";
-// @import "components/grid";
-// @import "components/work";
-// @import "components/lab";
-// @import "components/musings";
-// @import "components/about";
-// @import "components/forecast";
-@import "components/signup";
-// @import "components/thanks";
-// @import "components/carousel";
 
-.img-small {
-  background: url("../images/nature.jpg");
+/* This modifies the form fields to have squared edges and only show the bottom border */
+
+.form-control {
+  border-radius: 0px !important;
+  border-left-width: 0px !important;
+  border-top-width: 0px !important;
+  border-right-width: 0px !important;
+  background-color: #ffffff00 !important;
+  border-color: #ACACAC !important;
 }
 
-.img-small2 {
-  background: url("../images/space.jpg");
+
+/* This removes the shadow from the form button */
+
+.form-btn {
+  -webkit-box-shadow: 0 0px 0px rgb(0 0 0 / 10%) !important;
+  box-shadow: 0 0px 0px rgb(0 0 0 / 10%) !important;
 }
 
-.forecast-selector {
-  background-image: url('../../images/down-arrow.png');
+
+/* This removes the rounded corners of the filter field as seen on the Announcements and Blog Search Pages  */
+
+.filter__field {
+  border-radius: 0px !important;
 }
 
-.work-link {
-  color: #1500ff;
-  text-decoration: underline;
+
+/* This removes the shadow from buttons throughout the site */
+
+.btn {
+  -webkit-box-shadow: 0 0px 0px rgb(0 0 0 / 10%) !important;
+  box-shadow: 0 0px 0px rgb(0 0 0 / 10%) !important;
 }
 
-.about-title {
-  text-align: center;
-  margin-bottom: 2.5rem;
-  font-size: 1.75rem;
-  font-weight: bold;
-  color: #333;
+
+/* This modifies the accordions to only show the bottom border */
+
+.block-type--accordion .block {
+  border-top: 0px !important;
+  border-left: 0px !important;
+  border-right: 0px !important;
 }
 
-.carousel-title{margin-top:2.75rem;font-size:1.45rem;color:#873c93;font-weight:700;text-align:center;line-height:1.2}
 
-.carousel-text{margin:1rem 0 .5rem;line-height:1.4;font-family:Helvetica,Arial,sans-serif}
+/* This adds more spacing between the login page title and login form fields */
 
-.purple-link-container{max-width:212px}
+h1.auth__title { 
+  margin-bottom: 40px; !important;
+}
 
-.purple-link{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-smoothing:antialiased;font-size:.85rem;padding:.55rem .9rem;background:#8f479a;color:#e1ff8c;letter-spacing:.075em}
 
-.purple-link-shadow{right:-7px;top:7px;background:#e1ff8c}
+/* This reduces the h1 font size of the blog post title on the blog feed page on desktop  */
+
+@media (min-width: 768px) {
+  h1.blog-post-body__title {
+   font-size: 58px !important;
+  }
+}
+
+/* This moves the podcast intro section up higher so that it is behind the transparent header. Delete this code if not using a transparent header for the website theme */
+
+.podcast-intro { 
+  margin-top: -80px !important;
+  padding-top: 80px !important;
+}
+
+
+/* This moves the coaching product hero section up higher so that it is behind the transparent header. Delete this code if not using a transparent header for the website theme */
+
+.coaching-programs__container { 
+  margin-top: -94px !important;
+}
+
+.coaching-programs__header  {
+  padding-top: 94px !important;
+}
+
+
+/* This removes the rounded corners on the error prompt */
+
+.parsley-errors-list {
+  border-radius: 0px !important;
+}
+
+
+/* This removes the rounded corners on alert messages */
+
+.alert {
+  border-radius: 0px !important;
+}
+
+
+/* This modifies the colors on the red alert message */
+
+.alert--danger {
+  border-color: #7D251C !important;
+  color: #7D251C !important;
+  background-color: RGBA(125, 37, 28, 0.15) !important;
+}
+
+//////////
+
+.flash-text{font-family:inherit !important;font-size:0.95rem !important}
+
+.btn{box-shadow:none}
+
+.box-shadow-medium{box-shadow:0 10px 20px 0 rgba(0,0,0,.08)}
+
+.block-type--offer > .box-shadow-medium:hover{transform:translateY(-5px)}
+
+.block-type--offer .card__price{width:6rem;height:1.5rem;overflow:hidden;color:#949494 !important}
+
+@media only screen and (min-width: 1100px){
+  #section-1593046178513 .container,#section-1593046189841 .container,.header__container,.products .container{
+    padding-left:60px !important;padding-right:60px !important
+  }
+}
+
+.header .btn--outline{font-size:16px}
+
+.dropdown__menu{min-width:150px;text-align:center}
+
+.dropdown__item > a[href="/library"]{display:none}
+
+
+
+@media only screen and (max-device-width: 1080px){#section-1635368407090,#section-1635443558220{background-attachment:initial !important}}
+
+.footer__container{justify-content:flex-end}
