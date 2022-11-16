@@ -49,6 +49,14 @@ body {
   border: 3px solid $border-color;
 }
 
+.link-two-line {
+  line-height: 1.1
+  // @media screen and (max-width: 440px) {
+  //   line-height: 1.06;
+  //   padding: 1.5rem 1.75rem;
+  // }
+}
+
 .link {
   border: 3px solid $border-color;
   text-align: center;
@@ -64,6 +72,11 @@ body {
 
   @media screen and (min-width: 425px) {
     font-size: 1.8rem;
+  }
+
+  @media screen and (max-width: 440px) {
+    line-height: 1.06;
+    padding: 1.5rem 1.75rem;
   }
 }
 
@@ -125,13 +138,6 @@ body {
 
 .link-shadow6 {
   background: #af6fda;
-}
-
-.link-two-line {
-  @media screen and (max-width: 440px) {
-    line-height: 1.06;
-    padding: 1.5rem 1.75rem;
-  }
 }
 
 .coming-soon {
